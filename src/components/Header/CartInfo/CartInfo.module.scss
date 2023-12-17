@@ -1,0 +1,46 @@
+@import '../../../assets/sass/variables.scss';
+@import '../../../assets/sass/mixins.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cartinfo_container {
+  height: 46px;
+  width: 130px;
+  background-color: $secondary_color;
+  border-radius: 25px;
+  @include flexBox(nowrap, row, center, center);
+  cursor: pointer;
+
+  .total_price_box {
+    width: 49%;
+    height: 100%;
+    border-radius: 25px 0 0 25px;
+    border: 0 2px 0 0 solid #fff;
+    color: $additional_color;
+    @include flexBox(nowrap, row, center, center);
+  }
+  .separation_box {
+    border-left: 1px solid #fff;
+    height: 50%;
+  }
+  .item_amount_box {
+    width: 49%;
+    height: 100%;
+    border-radius: 0 25px 25px 0;
+    @include flexBox(nowrap, row, center, center);
+
+    .cart_icon {
+      color: #fff;
+      width: 24px;
+      height: 24px;
+    }
+    .item_amount {
+      color: $additional_color;
+      margin: 0 5px;
+    }
+  }
+}
