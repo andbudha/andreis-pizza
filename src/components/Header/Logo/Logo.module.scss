@@ -1,0 +1,17 @@
+@import '../../../assets/sass/mixins.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.logo_container {
+  @include flexBox(nowrap, row, space-around, center);
+  height: 120px;
+  width: 150px;
+  border: 1px solid;
+}
+
+.logo {
+  width: 110px;
+}
