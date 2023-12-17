@@ -1,0 +1,66 @@
+@import '../../../assets/sass/variables.scss';
+@import '../../../assets/sass/mixins.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
+}
+
+.search_container {
+  height: 50px;
+  width: 300px;
+  @include flexBox(nowrap, row, center, center);
+
+  .search_box {
+    position: relative;
+    @include flexBox(nowrap, row, center, center);
+
+    .input_box {
+      border: 1px solid $secondary_color;
+      outline: none;
+      width: 300px;
+      height: 46px;
+      border-radius: 23px;
+      padding: 10px 50px;
+      font-size: large;
+      color: $secondary_color;
+    }
+    .input_box:focus {
+      border: 3px solid $secondary_color;
+      color: $secondary_color;
+    }
+
+    .search_icon {
+      position: absolute;
+      left: 0;
+      height: 46px;
+      width: 46px;
+      border-radius: 23px;
+      padding: 10px;
+      cursor: pointer;
+      color: $secondary_color;
+    }
+    .search_icon:active {
+      color: $primary_color;
+      height: 44px;
+      width: 44px;
+    }
+    .remove_icon {
+      position: absolute;
+      right: 0;
+      height: 46px;
+      width: 46px;
+      border-radius: 23px;
+      padding: 10px;
+      cursor: pointer;
+      color: $secondary_color;
+    }
+    .remove_icon:active {
+      color: $primary_color;
+      height: 44px;
+      width: 44px;
+    }
+  }
+}
