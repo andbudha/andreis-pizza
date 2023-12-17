@@ -7,3 +7,125 @@
   box-sizing: border-box;
   font-family: 'Nunito', sans-serif;
 }
+
+.pizza_card_container {
+  width: 280px;
+  height: 440px;
+  // border: 1px solid $border_color;
+  border-radius: 10px;
+  margin: 15px;
+  @include flexBox(nowrap, column, space-around, center);
+  box-shadow: $shadow_color 0px 8px 24px;
+
+  .pizza_img_box {
+    width: 260px;
+    height: 300px;
+    @include flexBox(nowrap, column, space-around, center);
+    font-size: large;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: $primary_color;
+
+    .pizza_img {
+      width: 250px;
+      height: 250px;
+    }
+  }
+  .pizza_detail_box {
+    height: 80px;
+    width: 250px;
+    @include flexBox(nowrap, column, space-between, center);
+
+    .pizza_crust_box {
+      height: 38px;
+      width: 250px;
+      font-size: medium;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $primary_color;
+      @include flexBox(nowrap, row, space-between, center);
+
+      .crust_box {
+        height: 100%;
+        width: 49.5%;
+        border: 1px solid $border_color;
+        border-radius: 5px;
+        cursor: pointer;
+        @include flexBox(nowrap, column, center, center);
+      }
+      .selected {
+        background-color: $selected_color;
+        border: 1px solid $primary_color;
+      }
+    }
+
+    .pizza_size_box {
+      height: 38px;
+      width: 250px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $primary_color;
+      @include flexBox(nowrap, row, space-between, center);
+
+      .size_box {
+        height: 100%;
+        width: 49.5%;
+        border: 1px solid $border_color;
+        border-radius: 5px;
+        cursor: pointer;
+        @include flexBox(nowrap, column, center, center);
+      }
+      .selected {
+        background-color: $selected_color;
+        border: 1px solid $primary_color;
+      }
+    }
+  }
+  .card_bottom_box {
+    width: 250px;
+    height: 46px;
+    @include flexBox(nowrap, row, space-between, center);
+    padding: 0 5px;
+
+    .pizza_price {
+      font-size: large;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $primary_color;
+    }
+    .add_to_cart_btn {
+      height: 32px;
+      width: 70px;
+      background-color: $primary_color;
+      border-radius: 16px;
+      cursor: pointer;
+      @include flexBox(nowrap, row, center, center);
+
+      .add_to_cart_icon {
+        width: 24px;
+        height: 24px;
+        color: $additional_color;
+      }
+      .added_items {
+        height: 24px;
+        width: 24px;
+        border-radius: 12px;
+        background-color: $secondary_color;
+        color: $additional_color;
+        font-weight: bold;
+        font-size: medium;
+        @include flexBox(nowrap, row, center, center);
+      }
+    }
+    .add_to_cart_btn:hover {
+      transition: ease-in-out all 0.2s;
+      background-color: $hover_color;
+    }
+    .add_to_cart_btn:not(:hover) {
+      transition: ease-in-out all 0.2s;
+    }
+    .add_to_cart_btn:active {
+      background-color: $primary_color;
+    }
+  }
+}
