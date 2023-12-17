@@ -10,6 +10,7 @@
   width: 100%;
   border-radius: 10px 10px 0 0;
   padding: 20px;
+  margin-bottom: 10px;
   border-bottom: 1px solid $border_color;
   @include flexBox(nowrap, row, space-between, center);
 }
