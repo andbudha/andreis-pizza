@@ -1,7 +1,6 @@
 // @flow
-import * as React from 'react';
 import styles from './Logo.module.scss';
-import logo from '../../../assets/images/logo/pizza_logo_no_bg.png';
+import logo from '../../../assets/images/logo/pizza_logo2_no_bg.png';
 type Props = {};
 export const Logo = (props: Props) => {
   return (
