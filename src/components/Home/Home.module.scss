@@ -11,22 +11,23 @@
   border-radius: 10px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1024px) {
   .home_container {
-    height: 95%;
-    width: 800px;
+    height: 94%;
+    width: 90%;
   }
 }
 @media (max-width: 900px) {
   .home_container {
-    height: 95%;
-    width: 750px;
+    height: 97%;
+    width: 95%;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
   .home_container {
-    height: 95%;
-    width: 400px;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
   }
 }

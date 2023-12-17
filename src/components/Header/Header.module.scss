@@ -1,5 +1,12 @@
+@import '../../assets/sass//mixins.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .header_container {
   height: 120px;
   background-color: plum;
   border-radius: 10px 10px 0 0;
+  @include flexBox(nowrap, row, space-around, center);
 }
