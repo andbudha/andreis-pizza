@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home_container {
+  height: 80%;
+  width: 1000px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+@media (max-width: 1080px) {
+  .home_container {
+    height: 95%;
+    width: 800px;
+  }
+}
+@media (max-width: 900px) {
+  .home_container {
+    height: 95%;
+    width: 750px;
+  }
+}
+
+@media (max-width: 500px) {
+  .home_container {
+    height: 95%;
+    width: 400px;
+  }
+}
