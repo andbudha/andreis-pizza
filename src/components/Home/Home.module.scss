@@ -6,12 +6,12 @@
 
 .home_container {
   height: 80%;
-  width: 1000px;
+  width: 960px;
   background-color: #fff;
   border-radius: 10px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 960px) {
   .home_container {
     height: 94%;
     width: 90%;

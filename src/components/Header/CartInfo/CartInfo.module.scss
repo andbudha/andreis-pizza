@@ -44,3 +44,12 @@
     }
   }
 }
+
+.cartinfo_container:hover {
+  background-color: $hover_color;
+  border: 2px solid $secondary_color;
+}
+
+.cartinfo_container:active {
+  background-color: $secondary_color;
+}

@@ -7,7 +7,7 @@ export const Search = (props: Props) => {
       <div className={styles.search_box}>
         {' '}
         <IoMdSearch className={styles.search_icon} />
-        <input className={styles.input_box} placeholder="Search pizza.." />
+        <input className={styles.input_box} placeholder="Search pizza..." />
         <IoMdClose className={styles.remove_icon} />
       </div>
     </div>

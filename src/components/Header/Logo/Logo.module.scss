@@ -1,4 +1,5 @@
 @import '../../../assets/sass/mixins.scss';
+@import '../../../assets/sass/variables.scss';
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +7,11 @@
 }
 
 .logo_container {
-  @include flexBox(nowrap, row, space-around, center);
   width: 120px;
+  @include flexBox(nowrap, row, space-around, center);
 }
 
 .logo {
   width: 110px;
+  cursor: pointer;
 }
