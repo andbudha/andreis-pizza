@@ -18,18 +18,20 @@
     @include flexBox(nowrap, row, center, center);
 
     .input_box {
-      border: 1px solid $primary_color;
+      border: 1px solid $secondary_color;
       outline: none;
       width: 300px;
       height: 46px;
       border-radius: 23px;
       padding: 10px 50px;
       font-size: large;
-      color: $primary_color;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $secondary_color;
     }
     .input_box:focus {
       border: 3px solid $primary_color;
-      color: $primary_color;
+      color: $secondary_color;
     }
 
     .search_icon {

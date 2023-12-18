@@ -1,3 +1,4 @@
+import { Filter } from '../Filter/Filter';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { PizzaCard } from '../PizzaCard/PizzaCard';
@@ -10,7 +11,9 @@ export const Home = (props: Props) => {
       <div className={styles.header}>
         <Header />
       </div>
-      <div className={styles.filter}></div>
+      <div className={styles.filter}>
+        <Filter />
+      </div>
       <div className={styles.pizza_grid_box}>
         <PizzaCard />
         <PizzaCard />

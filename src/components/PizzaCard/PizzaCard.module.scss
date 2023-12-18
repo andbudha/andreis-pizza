@@ -23,7 +23,7 @@
     font-size: large;
     font-weight: bold;
     letter-spacing: 1px;
-    color: $primary_color;
+    color: $secondary_color;
 
     .pizza_img {
       width: 240px;
@@ -41,7 +41,7 @@
       font-size: medium;
       font-weight: bold;
       letter-spacing: 1px;
-      color: $primary_color;
+      color: $secondary_color;
       @include flexBox(nowrap, row, space-between, center);
 
       .crust_box {
@@ -63,7 +63,7 @@
       width: 250px;
       font-weight: bold;
       letter-spacing: 1px;
-      color: $primary_color;
+      color: $secondary_color;
       @include flexBox(nowrap, row, space-between, center);
 
       .size_box {
@@ -90,7 +90,7 @@
       font-size: large;
       font-weight: bold;
       letter-spacing: 1px;
-      color: $primary_color;
+      color: $secondary_color;
     }
     .add_to_cart_btn {
       height: 32px;
@@ -110,7 +110,7 @@
         width: 24px;
         border-radius: 12px;
         background-color: $additional_color;
-        color: $primary_color;
+        color: $secondary_color;
         font-weight: bold;
         font-size: medium;
         @include flexBox(nowrap, row, center, center);
