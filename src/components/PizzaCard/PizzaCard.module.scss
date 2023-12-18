@@ -9,11 +9,11 @@
 }
 
 .pizza_card_container {
-  width: 280px;
+  width: 290px;
   height: 440px;
   // border: 1px solid $border_color;
   border-radius: 10px;
-  margin: 15px;
+  margin: 5px;
   @include flexBox(nowrap, column, space-around, center);
   box-shadow: $shadow_color 0px 8px 24px;
 
@@ -27,8 +27,8 @@
     color: $primary_color;
 
     .pizza_img {
-      width: 250px;
-      height: 250px;
+      width: 240px;
+      height: 240px;
     }
   }
   .pizza_detail_box {
@@ -110,8 +110,8 @@
         height: 24px;
         width: 24px;
         border-radius: 12px;
-        background-color: $secondary_color;
-        color: $additional_color;
+        background-color: $additional_color;
+        color: $primary_color;
         font-weight: bold;
         font-size: medium;
         @include flexBox(nowrap, row, center, center);
