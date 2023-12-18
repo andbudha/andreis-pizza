@@ -1,0 +1,31 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/variables.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.filter_container {
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid $border_color;
+  @include flexBox(nowrap, row, center, center);
+
+  .filter_box {
+    height: 80px;
+    width: 600px;
+    @include flexBox(nowrap, row, space-around, center);
+  }
+  @media (max-width: 640px) {
+    .filter_box {
+      height: 190px;
+      @include flexBox(nowrap, column, space-around, center);
+    }
+  }
+}
+@media (max-width: 640px) {
+  .filter_container {
+    height: 200px;
+  }
+}
