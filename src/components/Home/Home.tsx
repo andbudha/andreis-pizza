@@ -6,8 +6,19 @@ type Props = {};
 export const Home = (props: Props) => {
   return (
     <div className={styles.home_container}>
-      <Header />
-      <PizzaCard />
+      <div className={styles.header}>
+        <Header />
+      </div>
+      <div className={styles.filter}></div>
+      <div className={styles.pizza_grid_box}>
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+        <PizzaCard />
+      </div>
+      <div className={styles.footer}></div>
     </div>
   );
 };

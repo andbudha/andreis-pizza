@@ -1,3 +1,5 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/variables.scss';
 * {
   margin: 0;
   padding: 0;
@@ -5,29 +7,56 @@
 }
 
 .home_container {
-  height: 80%;
+  display: grid;
   width: 960px;
   background-color: #fff;
   border-radius: 10px;
+  grid-template-areas:
+    'header header header'
+    'filter filter filter'
+    'cards cards cards'
+    'footer footer footer';
+
+  .header {
+    grid-area: header;
+  }
+  .filter {
+    grid-area: filter;
+    margin-bottom: 25px;
+  }
+  .pizza_grid_box {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 25px;
+    border-bottom: 1px solid $border_color;
+  }
+  @media (max-width: 960px) {
+    .pizza_grid_box {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      overflow: hidden;
+    }
+  }
+  @media (max-width: 640px) {
+    .pizza_grid_box {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+    }
+  }
+  .footer {
+    grid-area: footer;
+  }
 }
 
 @media (max-width: 960px) {
   .home_container {
-    height: 94%;
-    width: 90%;
-  }
-}
-@media (max-width: 900px) {
-  .home_container {
-    height: 97%;
-    width: 95%;
-  }
-}
-
-@media (max-width: 640px) {
-  .home_container {
-    height: 100%;
     width: 100%;
+    height: 100%;
     border-radius: 0;
   }
 }
