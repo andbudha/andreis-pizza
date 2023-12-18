@@ -1,3 +1,4 @@
+import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import { PizzaCard } from '../PizzaCard/PizzaCard';
 import styles from './Home.module.scss';
@@ -18,7 +19,9 @@ export const Home = (props: Props) => {
         <PizzaCard />
         <PizzaCard />
       </div>
-      <div className={styles.footer}></div>
+      <div className={styles.footer}>
+        <Footer />
+      </div>
     </div>
   );
 };
