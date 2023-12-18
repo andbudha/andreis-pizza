@@ -28,6 +28,7 @@
         font-size: medium;
         font-weight: 500;
         color: $primary_color;
+        margin-left: 10px;
       }
     }
     .total_items {
@@ -40,6 +41,25 @@
         font-size: medium;
         font-weight: 500;
         color: $primary_color;
+        margin-left: 10px;
+      }
+    }
+    @media (max-width: 640px) {
+      .total_price {
+        @include flexBox(no-wrap, column, space-between, center);
+        padding-left: 0px;
+        span {
+          font-size: large;
+          font-weight: bold;
+        }
+      }
+      .total_items {
+        @include flexBox(no-wrap, column, space-between, center);
+        padding-right: 0px;
+        span {
+          font-size: large;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -49,4 +69,8 @@
     width: 100%;
     @include flexBox(nowrap, row, center, center);
   }
+}
+
+.footer_container {
+  height: 140px;
 }

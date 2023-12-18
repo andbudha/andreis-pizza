@@ -1,4 +1,4 @@
-import styles from './Foter.module.scss';
+import styles from './Footer.module.scss';
 
 type Props = {};
 export const Footer = (props: Props) => {
@@ -6,13 +6,15 @@ export const Footer = (props: Props) => {
     <div className={styles.footer_container}>
       <div className={styles.info_box}>
         <div className={styles.total_price}>
+          <h3>Total sum:</h3>
           <h3>
-            Total sum: <span>{38.5} €.</span>
+            <span>{38.5} €.</span>
           </h3>
         </div>
         <div className={styles.total_items}>
+          <h3>Items in cart:</h3>
           <h3>
-            Items in cart: <span>{3} pcs.</span>
+            <span>{3} pcs.</span>
           </h3>
         </div>
       </div>

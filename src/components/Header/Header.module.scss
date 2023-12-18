@@ -17,7 +17,7 @@
 
 @media (max-width: 640px) {
   .header_container {
-    @include flexBox(wrap, column, space-between, center);
+    @include flexBox(no-wrap, column, space-between, center);
     height: 200px;
   }
 }
