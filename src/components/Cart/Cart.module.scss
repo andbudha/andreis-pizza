@@ -8,17 +8,150 @@
 }
 
 .cart_container {
-  height: 600px;
+  height: 800px;
   width: 100%;
-  @include flexBox(nowrap, column, start, center);
+  border-radius: 0 0 10px 10px;
+  @include flexBox(nowrap, column, start, start);
 
   .empty_cart_btn_box {
-    height: 60px;
+    height: 100px;
     width: 100%;
     @include flexBox(nowrap, column, center, center);
-    background-color: $border_color;
 
     .empty_cart_btn {
+      height: 46px;
+      width: 150px;
+      border-radius: 25px;
+      background-color: $additional_color;
+      border: 1px solid $primary_color;
+      color: $secondary_color;
+      font-size: medium;
+      font-weight: bold;
+      cursor: pointer;
+      @include flexBox(nowrap, row, center, center);
+
+      .empty_cart_icon {
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .empty_cart_btn:hover {
+      transition: ease-in-out all 0.3s;
+      background-color: $secondary_color;
+      color: $additional_color;
+    }
+
+    .empty_cart_btn:not(:hover) {
+      transition: ease-in-out all 0.5s;
+    }
+  }
+
+  .cart_list_box {
+    width: 100%;
+    height: 150px;
+    padding: 0 30px;
+    border-bottom: 1px solid $border_color;
+  }
+
+  .cart_footer_box {
+    height: 150px;
+    width: 100%;
+    padding: 0 30px;
+    @include flexBox(nowrap, column, space-around, center);
+
+    .info_box {
+      width: 100%;
+      @include flexBox(nowrap, row, space-between, center);
+
+      .total_price {
+        height: 50px;
+        width: 200px;
+        @include flexBox(nowrap, row, end, center);
+        h3 {
+          margin-right: 5px;
+          color: $primary_color;
+          span {
+            color: $secondary_color;
+          }
+        }
+      }
+      .total_items {
+        height: 50px;
+        width: 200px;
+        @include flexBox(nowrap, row, start, center);
+        h3 {
+          margin-right: 5px;
+          color: $primary_color;
+          span {
+            color: $secondary_color;
+          }
+        }
+      }
+    }
+
+    .footer_btn_box {
+      height: 50px;
+      width: 100%;
+      @include flexBox(nowrap, row, space-between, center);
+
+      .back_home_btn {
+        height: 46px;
+        width: 150px;
+        border-radius: 25px;
+        background-color: $additional_color;
+        border: 1px solid $primary_color;
+        color: $secondary_color;
+        font-size: medium;
+        font-weight: bold;
+        cursor: pointer;
+        @include flexBox(nowrap, row, center, center);
+
+        .back_to_main_icon {
+          margin-right: 5px;
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .back_home_btn:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .back_home_btn:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
+      .pay_btn {
+        height: 46px;
+        width: 150px;
+        border-radius: 25px;
+        background-color: $additional_color;
+        border: 1px solid $primary_color;
+        color: $secondary_color;
+        font-size: medium;
+        font-weight: bold;
+        cursor: pointer;
+        @include flexBox(nowrap, row, center, center);
+
+        .pay_icon {
+          margin-right: 5px;
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      .pay_btn:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .pay_btn:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
     }
   }
 }
