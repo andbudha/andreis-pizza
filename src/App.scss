@@ -7,9 +7,9 @@
   letter-spacing: 0.7px;
 }
 
-.app-container {
-  height: auto;
-  width: 100vw;
+.app_container {
+  min-height: 100vh;
+  min-width: 100vw;
   background-image: url('../src/assets/images/background/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -17,4 +17,19 @@
   display: grid;
   justify-items: center;
   align-items: center;
+  .wrapper {
+    width: 1000px;
+    height: auto;
+    background-color: $additional_color;
+    border-radius: 10px;
+    display: grid;
+  }
+
+  @media (max-width: 1000px) {
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+    }
+  }
 }
