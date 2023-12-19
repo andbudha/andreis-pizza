@@ -24,8 +24,8 @@ export const PizzaCard = ({
   types,
 }: PizzaCardProps) => {
   const crustTypes = ['thin-crust', 'thick-crust'];
-  const [selectedCrust, setSelectedCrust] = useState(0);
-  const [selectedSize, setSelectedSize] = useState(26);
+  const [selectedCrust, setSelectedCrust] = useState(3);
+  const [selectedSize, setSelectedSize] = useState(0);
 
   const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
 

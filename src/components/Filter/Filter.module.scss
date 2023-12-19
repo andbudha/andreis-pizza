@@ -15,11 +15,13 @@
   .filter_box {
     height: 80px;
     width: 600px;
+    //background-color: $hover_color;
     @include flexBox(nowrap, row, space-around, center);
   }
   @media (max-width: 640px) {
     .filter_box {
       height: 190px;
+      width: 100%;
       @include flexBox(nowrap, column, space-around, center);
     }
   }
