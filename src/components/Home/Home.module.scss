@@ -7,26 +7,14 @@
 }
 
 .home_container {
-  display: grid;
-  //height: 90%;
-  width: 1200px;
+  height: auto;
+  width: 100%;
   background-color: #fff;
-  border-radius: 10px;
-  grid-template-areas:
-    'header header header'
-    'filter filter filter'
-    'cards cards cards'
-    'footer footer footer';
+  border-radius: 0 0 10px 10px;
 
-  .header {
-    grid-area: header;
-  }
-  .filter {
-    grid-area: filter;
-    margin-bottom: 25px;
-  }
   .pizza_grid_box {
-    grid-area: cards;
+    height: fit-content;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -36,11 +24,10 @@
     padding-bottom: 25px;
     border-bottom: 1px solid $border_color;
   }
-  @media (max-width: 960px) {
+  @media (max-width: 1000px) {
     .pizza_grid_box {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(3, 1fr);
-      overflow: hidden;
     }
   }
   @media (max-width: 640px) {
@@ -48,16 +35,5 @@
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: repeat(6, 1fr);
     }
-  }
-  .footer {
-    grid-area: footer;
-  }
-}
-
-@media (max-width: 960px) {
-  .home_container {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
   }
 }
