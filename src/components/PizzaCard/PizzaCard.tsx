@@ -25,10 +25,9 @@ export const PizzaCard = ({
 }: PizzaCardProps) => {
   const crustTypes = ['thin-crust', 'thick-crust'];
   const [selectedCrust, setSelectedCrust] = useState(0);
-  console.log(selectedCrust);
-  const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
+  const [selectedSize, setSelectedSize] = useState(26);
 
-  console.log(crustType);
+  const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
 
   return (
     <div className={styles.pizza_card_container}>
@@ -40,7 +39,7 @@ export const PizzaCard = ({
         <div className={styles.pizza_crust_box}>
           <div
             onClick={() => setSelectedCrust(types[0])}
-            className={`${styles.crust_box} ${
+            className={`${styles.thin_crust_btn} ${
               selectedCrust === types[0] ? styles.selected : ''
             }`}
           >
@@ -48,7 +47,7 @@ export const PizzaCard = ({
           </div>
           <div
             onClick={() => setSelectedCrust(types[1])}
-            className={`${styles.crust_box} ${
+            className={`${styles.thick_crust_btn} ${
               selectedCrust === types[1] ? styles.selected : ''
             }`}
           >
@@ -56,10 +55,22 @@ export const PizzaCard = ({
           </div>
         </div>
         <div className={styles.pizza_size_box}>
-          <div className={`${styles.size_box} ${styles.selected}`}>
+          <div
+            onClick={() => setSelectedSize(sizes[0])}
+            className={`${styles.small_pizza_size_btn} ${
+              selectedSize === sizes[0] ? styles.selected : null
+            }`}
+          >
             {sizes[0]} cm.
           </div>
-          <div className={styles.size_box}>{sizes[1]} cm.</div>
+          <div
+            onClick={() => setSelectedSize(sizes[1])}
+            className={`${styles.big_pizza_size_btn} ${
+              selectedSize === sizes[1] ? styles.selected : null
+            }`}
+          >
+            {sizes[1]} cm.
+          </div>
         </div>
       </div>
       <div className={styles.card_bottom_box}>
