@@ -1,10 +1,13 @@
 import styles from './Cart.module.scss';
+import { RiDeleteBinLine } from 'react-icons/ri';
 type CartProps = {};
 export const Cart = (props: CartProps) => {
   return (
     <div className={styles.cart_container}>
       <div className={styles.empty_cart_btn_box}>
-        <div className={styles.empty_cart_btn}></div>
+        <div className={styles.empty_cart_btn}>
+          <RiDeleteBinLine />
+        </div>
       </div>
       <div className={styles.cart_list_box}>{'Cart List'}</div>
       <div className={styles.cart_footer_box}>
@@ -12,13 +15,13 @@ export const Cart = (props: CartProps) => {
           <div className={styles.total_price}>
             <h3>Total sum:</h3>
             <h3>
-              <span>{38.5} €.</span>
+              <span>{0} €.</span>
             </h3>
           </div>
           <div className={styles.total_items}>
             <h3>Items in cart:</h3>
             <h3>
-              <span>{3} pcs.</span>
+              <span>{0} pcs.</span>
             </h3>
           </div>
         </div>

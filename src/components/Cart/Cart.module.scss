@@ -6,3 +6,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.cart_container {
+  height: 600px;
+  width: 100%;
+  @include flexBox(nowrap, column, start, center);
+
+  .empty_cart_btn_box {
+    height: 60px;
+    width: 100%;
+    @include flexBox(nowrap, column, center, center);
+    background-color: $border_color;
+
+    .empty_cart_btn {
+    }
+  }
+}
