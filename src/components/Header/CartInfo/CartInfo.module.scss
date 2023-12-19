@@ -7,53 +7,57 @@
   box-sizing: border-box;
 }
 
-.cartinfo_container {
-  height: 46px;
-  width: 130px;
-  background-color: $primary_color;
-  border-radius: 25px;
-  @include flexBox(nowrap, row, center, center);
-  cursor: pointer;
+.link {
+  text-decoration: none;
 
-  .total_price_box {
-    width: 49%;
-    height: 100%;
-    border-radius: 25px 0 0 25px;
-    border: 0 2px 0 0 solid #fff;
-    color: $additional_color;
+  .cartinfo_container {
+    height: 46px;
+    width: 130px;
+    background-color: $primary_color;
+    border-radius: 25px;
     @include flexBox(nowrap, row, center, center);
-  }
-  .separation_box {
-    border-left: 1px solid #fff;
-    height: 50%;
-  }
-  .item_amount_box {
-    width: 49%;
-    height: 100%;
-    border-radius: 0 25px 25px 0;
-    @include flexBox(nowrap, row, center, center);
+    cursor: pointer;
 
-    .cart_icon {
-      color: #fff;
-      width: 24px;
-      height: 24px;
-    }
-    .item_amount {
+    .total_price_box {
+      width: 49%;
+      height: 100%;
+      border-radius: 25px 0 0 25px;
+      border: 0 2px 0 0 solid #fff;
       color: $additional_color;
-      margin: 0 5px;
+      @include flexBox(nowrap, row, center, center);
+    }
+    .separation_box {
+      border-left: 1px solid #fff;
+      height: 50%;
+    }
+    .item_amount_box {
+      width: 49%;
+      height: 100%;
+      border-radius: 0 25px 25px 0;
+      @include flexBox(nowrap, row, center, center);
+
+      .cart_icon {
+        color: #fff;
+        width: 24px;
+        height: 24px;
+      }
+      .item_amount {
+        color: $additional_color;
+        margin: 0 5px;
+      }
     }
   }
-}
 
-.cartinfo_container:hover {
-  transition: ease-in-out all 0.2s;
-  background-color: $hover_color;
-}
+  .cartinfo_container:hover {
+    transition: ease-in-out all 0.2s;
+    background-color: $hover_color;
+  }
 
-.cartinfo_container:not(:hover) {
-  transition: ease-in-out all 0.2s;
-}
+  .cartinfo_container:not(:hover) {
+    transition: ease-in-out all 0.2s;
+  }
 
-.cartinfo_container:active {
-  background-color: $primary_color;
+  .cartinfo_container:active {
+    background-color: $primary_color;
+  }
 }
