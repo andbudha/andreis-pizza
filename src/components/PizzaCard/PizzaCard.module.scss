@@ -33,6 +33,7 @@
   .pizza_detail_box {
     height: 80px;
     width: 250px;
+    margin-bottom: 10px;
     @include flexBox(nowrap, column, space-between, center);
 
     .pizza_crust_box {
@@ -44,17 +45,44 @@
       color: $secondary_color;
       @include flexBox(nowrap, row, space-between, center);
 
-      .crust_box {
+      .thin_crust_btn {
         height: 100%;
         width: 49.5%;
         border: 1px solid $border_color;
-        border-radius: 5px;
+        border-top-left-radius: 10px;
         cursor: pointer;
         @include flexBox(nowrap, column, center, center);
       }
+      .thin_crust_btn:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .thin_crust_btn:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
+
+      .thick_crust_btn {
+        height: 100%;
+        width: 49.5%;
+        border: 1px solid $border_color;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        @include flexBox(nowrap, column, center, center);
+      }
+      .thick_crust_btn:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .thick_crust_btn:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
       .selected {
-        background-color: $selected_color;
-        border: 1px solid $primary_color;
+        background-color: $hover_color;
+        color: $additional_color;
       }
     }
 
@@ -66,17 +94,44 @@
       color: $secondary_color;
       @include flexBox(nowrap, row, space-between, center);
 
-      .size_box {
+      .small_pizza_size_btn {
         height: 100%;
         width: 49.5%;
         border: 1px solid $border_color;
-        border-radius: 5px;
+        border-bottom-left-radius: 10px;
         cursor: pointer;
         @include flexBox(nowrap, column, center, center);
       }
+
+      .small_pizza_size_btn:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .small_pizza_size_btn:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
+      .big_pizza_size_btn {
+        height: 100%;
+        width: 49.5%;
+        border: 1px solid $border_color;
+        border-bottom-right-radius: 10px;
+        cursor: pointer;
+        @include flexBox(nowrap, column, center, center);
+      }
+      .big_pizza_size_btn:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .big_pizza_size_btn:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
       .selected {
-        background-color: $selected_color;
-        border: 1px solid $primary_color;
+        background-color: $hover_color;
+        color: $additional_color;
       }
     }
   }
