@@ -5,7 +5,6 @@ type Props = {};
 export const Filter = (props: Props) => {
   const [activeType, setActiveType] = useState('All');
   const pizzaType = ['All', 'Meat Lovers', 'Cheese', 'Vegetarian'];
-  console.log(activeType);
 
   return (
     <div className={styles.filter_container}>
