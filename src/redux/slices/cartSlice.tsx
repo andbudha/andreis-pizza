@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { CartPizza } from '../assets/types/types';
+import { CartPizza } from '../../assets/types/types';
 
 const slice = createSlice({
   name: 'cart',
