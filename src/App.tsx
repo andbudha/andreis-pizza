@@ -3,6 +3,7 @@ import './App.scss';
 import { Home } from './components/Home/Home';
 import { Cart } from './components/Cart/Cart';
 import { Header } from './components/Header/Header';
+import { EmptyCart } from './components/Cart/EmptyCart/EmptyCart';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/emptycart" element={<EmptyCart />} />
           </Routes>
         </div>
       </div>

@@ -4,21 +4,38 @@ import { MdEuroSymbol } from 'react-icons/md';
 import { IoChevronBack } from 'react-icons/io5';
 import { CartItem } from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { AppRootState, useAppDispatch } from '../../redux/store';
+import { CartPizza } from '../../assets/types/types';
+import { cartActions } from '../../redux/cartSlice';
+import { EmptyCart } from './EmptyCart/EmptyCart';
 type CartProps = {};
 export const Cart = (props: CartProps) => {
+  const dispatch = useAppDispatch();
+  const cartItems = useSelector<AppRootState, CartPizza[]>(
+    (state) => state.cart.cartItems
+  );
+
+  const cartList = cartItems.map((item) => {
+    return <CartItem key={item.id} item={item} />;
+  });
+
+  const emptyCartHandler = () => {
+    dispatch(cartActions.emptyCart([]));
+  };
+
+  if (!cartItems.length) {
+    return <EmptyCart />;
+  }
   return (
     <div className={styles.cart_container}>
       <div className={styles.empty_cart_btn_box}>
-        <div className={styles.empty_cart_btn}>
+        <div className={styles.empty_cart_btn} onClick={emptyCartHandler}>
           <RiDeleteBinLine className={styles.empty_cart_icon} />
           <span>Empty cart</span>
         </div>
       </div>
-      <div className={styles.cart_list_box}>
-        <CartItem />
-        <CartItem />
-        <CartItem />
-      </div>
+      <div className={styles.cart_list_box}>{cartList}</div>
       <div className={styles.cart_footer_box}>
         <div className={styles.info_box}>
           <div className={styles.total_items}>

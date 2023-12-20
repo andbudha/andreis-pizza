@@ -30,8 +30,8 @@ export const PizzaCard = ({
   const cartItems = useSelector<AppRootState>((state) => state.cart.cartItems);
 
   const crustTypes = ['thin-crust', 'thick-crust'];
-  const [selectedCrust, setSelectedCrust] = useState(3);
-  const [selectedSize, setSelectedSize] = useState(0);
+  const [selectedCrust, setSelectedCrust] = useState(0);
+  const [selectedSize, setSelectedSize] = useState(26);
   const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
 
   console.log(cartItems);
