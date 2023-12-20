@@ -2,6 +2,8 @@ import styles from './Cart.module.scss';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { MdEuroSymbol } from 'react-icons/md';
 import { IoChevronBack } from 'react-icons/io5';
+import { CartItem } from './CartItem/CartItem';
+import { Link } from 'react-router-dom';
 type CartProps = {};
 export const Cart = (props: CartProps) => {
   return (
@@ -12,7 +14,11 @@ export const Cart = (props: CartProps) => {
           <span>Empty cart</span>
         </div>
       </div>
-      <div className={styles.cart_list_box}>{'Cart List'}</div>
+      <div className={styles.cart_list_box}>
+        <CartItem />
+        <CartItem />
+        <CartItem />
+      </div>
       <div className={styles.cart_footer_box}>
         <div className={styles.info_box}>
           <div className={styles.total_items}>
@@ -29,15 +35,18 @@ export const Cart = (props: CartProps) => {
           </div>
         </div>
         <div className={styles.footer_btn_box}>
-          <div className={styles.back_home_btn}>
-            <IoChevronBack className={styles.back_to_main_icon} />
-            <span>Main</span>
-          </div>
-
-          <div className={styles.pay_btn}>
-            <MdEuroSymbol className={styles.pay_icon} />
-            <span>Pay</span>
-          </div>
+          <Link to={'/'} className={styles.back_to_main_link}>
+            <div className={styles.back_home_btn}>
+              <IoChevronBack className={styles.back_to_main_icon} />
+              <span>Main</span>
+            </div>
+          </Link>
+          <Link to={'/'} className={styles.pay_btn_link}>
+            <div className={styles.pay_btn}>
+              <MdEuroSymbol className={styles.pay_icon} />
+              <span>Pay</span>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
