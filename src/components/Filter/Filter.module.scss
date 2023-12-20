@@ -10,6 +10,7 @@
   height: 80px;
   width: 100%;
   border-bottom: 1px solid $border_color;
+  margin-bottom: 20px;
   @include flexBox(nowrap, row, center, center);
 
   .filter_box {

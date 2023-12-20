@@ -3,7 +3,7 @@ import { GrSubtractCircle, GrAddCircle } from 'react-icons/gr';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { CartPizza } from '../../../assets/types/types';
 import { useAppDispatch } from '../../../redux/store';
-import { cartActions } from '../../../redux/cartSlice';
+import { cartActions } from '../../../redux/slices/cartSlice';
 
 type CartItemProps = {
   item: CartPizza;

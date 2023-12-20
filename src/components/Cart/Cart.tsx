@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AppRootState, useAppDispatch } from '../../redux/store';
 import { CartPizza } from '../../assets/types/types';
-import { cartActions } from '../../redux/cartSlice';
+import { cartActions } from '../../redux/slices/cartSlice';
 import { EmptyCart } from './EmptyCart/EmptyCart';
 type CartProps = {};
 export const Cart = (props: CartProps) => {

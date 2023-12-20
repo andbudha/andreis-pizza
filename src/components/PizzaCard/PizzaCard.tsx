@@ -2,7 +2,7 @@ import styles from './PizzaCard.module.scss';
 import { BiCartAdd } from 'react-icons/bi';
 import { useState } from 'react';
 import { AppRootState, useAppDispatch } from '../../redux/store';
-import { cartActions } from '../../redux/cartSlice';
+import { cartActions } from '../../redux/slices/cartSlice';
 import { CartPizza } from '../../assets/types/types';
 import { useSelector } from 'react-redux';
 
