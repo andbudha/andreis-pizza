@@ -10,8 +10,6 @@ type Props = {};
 export const Home = (props: Props) => {
   const [pizzas, setPizzas] = useState<Pizza[]>([]);
 
-  console.log(pizzas);
-
   useEffect(() => {
     axios
       .get<Pizza[]>(

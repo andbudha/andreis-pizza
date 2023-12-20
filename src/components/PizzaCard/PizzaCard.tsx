@@ -1,8 +1,11 @@
 import styles from './PizzaCard.module.scss';
 import { BiCartAdd } from 'react-icons/bi';
-import pizzaImage from '../../assets/images/pizzas/frutti_di_mari_main.png';
-import { Pizza } from '../../assets/types/types';
 import { useState } from 'react';
+import { AppRootState, useAppDispatch } from '../../redux/store';
+import { cartActions } from '../../redux/cartSlice';
+import { CartPizza } from '../../assets/types/types';
+import { useSelector } from 'react-redux';
+
 type PizzaCardProps = {
   category: number;
   id: string;
@@ -23,12 +26,27 @@ export const PizzaCard = ({
   sizes,
   types,
 }: PizzaCardProps) => {
+  const dispatch = useAppDispatch();
+  const cartItems = useSelector<AppRootState>((state) => state.cart.cartItems);
+
   const crustTypes = ['thin-crust', 'thick-crust'];
   const [selectedCrust, setSelectedCrust] = useState(3);
   const [selectedSize, setSelectedSize] = useState(0);
-
   const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
 
+  console.log(cartItems);
+
+  const addPizzaToCartHandler = () => {
+    const addedPizza: CartPizza = {
+      id,
+      imageUrl,
+      name,
+      price,
+      crust: crustType,
+      size: selectedSize,
+    };
+    dispatch(cartActions.addPizza({ addedPizza }));
+  };
   return (
     <div className={styles.pizza_card_container}>
       <div className={styles.pizza_img_box}>
@@ -75,7 +93,7 @@ export const PizzaCard = ({
       </div>
       <div className={styles.card_bottom_box}>
         <div className={styles.pizza_price}>{price} €.</div>
-        <div className={styles.add_to_cart_btn}>
+        <div className={styles.add_to_cart_btn} onClick={addPizzaToCartHandler}>
           <BiCartAdd className={styles.add_to_cart_icon} />
           <div className={styles.added_items}>{0}</div>
         </div>
