@@ -1,0 +1,122 @@
+@import '../../../assets/sass/mixins.scss';
+@import '../../../assets/sass/variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cart_item_container {
+  height: 150px;
+  width: 100%;
+
+  @include flexBox(nowrap, row, center, center);
+
+  .cart_item_box {
+    height: 130px;
+    width: 100%;
+    margin: 0 50px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $border_color;
+    @include flexBox(nowrap, row, space-between, center);
+
+    .cart_item_img_box {
+      height: 130px;
+      width: 130px;
+      @include flexBox(nowrap, row, center, center);
+      .pizza_image {
+        height: 120px;
+        width: 120px;
+      }
+    }
+
+    .cart_item_detail_box {
+      height: 50px;
+      width: 300px;
+      @include flexBox(nowrap, column, center, start);
+
+      h3 {
+        color: $secondary_color;
+      }
+      h4 {
+        color: $primary_color;
+      }
+    }
+    .add_remove_cart_item_box {
+      height: 50px;
+      width: 150px;
+      color: $secondary_color;
+      @include flexBox(nowrap, row, space-around, center);
+
+      .remove_cart_item_icon {
+        height: 24px;
+        width: 24px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .remove_cart_item_icon:active {
+        height: 22px;
+        width: 22px;
+        border-radius: 11px;
+      }
+      .remove_cart_item_icon:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .remove_cart_item_icon:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
+      .cart_item_count {
+        font-size: larger;
+        font-weight: bold;
+      }
+      .add_cart_item_icon {
+        height: 24px;
+        width: 24px;
+        border-radius: 12px;
+        cursor: pointer;
+      }
+
+      .add_cart_item_icon:active {
+        height: 22px;
+        width: 22px;
+        border-radius: 11px;
+      }
+      .add_cart_item_icon:hover {
+        transition: ease-in-out all 0.3s;
+        background-color: $secondary_color;
+        color: $additional_color;
+      }
+
+      .add_cart_item_icon:not(:hover) {
+        transition: ease-in-out all 0.5s;
+      }
+    }
+
+    .delete_cart_item_icon_box {
+      height: 50px;
+      width: 50px;
+      color: $secondary_color;
+      @include flexBox(nowrap, row, center, center);
+
+      .delete_cart_item_icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+
+      .delete_cart_item_icon:hover {
+        width: 26px;
+        height: 26px;
+        transition: ease-in-out all 0.2s;
+      }
+      .delete_cart_item_icon:not(:hover) {
+        transition: ease-in-out all 0.2s;
+      }
+    }
+  }
+}
