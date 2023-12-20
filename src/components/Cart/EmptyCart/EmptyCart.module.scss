@@ -1,0 +1,68 @@
+@import '../../../assets/sass/mixins.scss';
+@import '../../../assets/sass/variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.empty_cart_container {
+  width: 100%;
+  height: 700px;
+  color: $primary_color;
+  @include flexBox(nowrap, column, space-around, center);
+
+  .empty_cart_img {
+    width: 450px;
+  }
+
+  @media (max-width: 640px) {
+    .empty_cart_img {
+      width: 350px;
+      margin: 100px 0;
+    }
+  }
+
+  .back_to_main_link {
+    text-decoration: none;
+  }
+  .back_home_btn_box {
+    width: 100%;
+
+    .back_home_btn {
+      height: 46px;
+      width: 150px;
+      border-radius: 25px;
+      background-color: $additional_color;
+      border: 1px solid $primary_color;
+      color: $secondary_color;
+      font-size: medium;
+      font-weight: bold;
+      cursor: pointer;
+      @include flexBox(nowrap, row, center, center);
+
+      .back_to_main_icon {
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .back_home_btn:hover {
+      transition: ease-in-out all 0.3s;
+      background-color: $secondary_color;
+      color: $additional_color;
+    }
+
+    .back_home_btn:not(:hover) {
+      transition: ease-in-out all 0.5s;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .empty_cart_container {
+    height: fit-content;
+  }
+}
