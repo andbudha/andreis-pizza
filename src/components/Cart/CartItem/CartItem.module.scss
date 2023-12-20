@@ -10,7 +10,6 @@
 .cart_item_container {
   height: 150px;
   width: 100%;
-
   @include flexBox(nowrap, row, center, center);
 
   .cart_item_box {
@@ -30,6 +29,17 @@
         width: 120px;
       }
     }
+    @media (max-width: 740px) {
+      .cart_item_img_box {
+        height: 200px;
+        width: 200px;
+        @include flexBox(nowrap, row, center, center);
+        .pizza_image {
+          height: 190px;
+          width: 190px;
+        }
+      }
+    }
 
     .cart_item_detail_box {
       height: 50px;
@@ -41,6 +51,12 @@
       }
       h4 {
         color: $primary_color;
+      }
+    }
+
+    @media (max-width: 740px) {
+      .cart_item_detail_box {
+        @include flexBox(nowrap, column, center, center);
       }
     }
     .add_remove_cart_item_box {
@@ -118,5 +134,23 @@
         transition: ease-in-out all 0.2s;
       }
     }
+  }
+
+  @media (max-width: 740px) {
+    .cart_item_box {
+      height: 360px;
+      width: 100%;
+      margin: 0 50px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid $border_color;
+      @include flexBox(nowrap, column, space-between, center);
+    }
+  }
+}
+@media (max-width: 740px) {
+  .cart_item_container {
+    height: 380px;
+    width: 100%;
+    @include flexBox(nowrap, column, center, center);
   }
 }

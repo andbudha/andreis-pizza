@@ -45,7 +45,7 @@ export const Cart = (props: CartProps) => {
             </h3>
           </div>
           <div className={styles.total_price}>
-            <h3>Total sum:</h3>
+            <h3>Total price:</h3>
             <h3>
               <span>{0} €.</span>
             </h3>

@@ -6,7 +6,7 @@ export const Footer = (props: Props) => {
     <div className={styles.footer_container}>
       <div className={styles.info_box}>
         <div className={styles.total_price}>
-          <h3>Total sum:</h3>
+          <h3>Total price:</h3>
           <h3>
             <span>{38.5} €.</span>
           </h3>

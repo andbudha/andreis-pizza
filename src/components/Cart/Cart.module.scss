@@ -90,6 +90,20 @@
       }
     }
 
+    @media (max-width: 500px) {
+      .info_box {
+        @include flexBox(nowrap, column, space-around, center);
+        .total_price {
+          margin-right: 0;
+          @include flexBox(nowrap, row, center, center);
+        }
+        .total_items {
+          margin-left: 0px;
+          @include flexBox(nowrap, row, center, center);
+        }
+      }
+    }
+
     .footer_btn_box {
       height: 50px;
       width: 100%;
@@ -158,6 +172,26 @@
       .pay_btn_link {
         text-decoration: none;
       }
+    }
+    @media (max-width: 500px) {
+      .footer_btn_box {
+        height: 140px;
+        @include flexBox(nowrap, column, space-around, center);
+        .back_home_btn {
+          margin-left: 0px;
+        }
+        .pay_btn {
+          margin-right: 0px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .cart_footer_box {
+      height: 220px;
+      margin-bottom: 30px;
+      @include flexBox(nowrap, column, center, center);
     }
   }
 }
