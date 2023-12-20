@@ -8,3 +8,13 @@ export type Pizza = {
   sizes: number[];
   types: number[];
 };
+
+export type CartPizza = {
+  id: string;
+  imageUrl: string;
+  name: string;
+  price: number;
+  size: number;
+  crust: string;
+  count?: number | undefined;
+};
