@@ -28,12 +28,13 @@ const fetchPizzas = createAsyncThunk<{ pizzas: Pizza[] }>(
     dispatch(pizzasActions.setIsLoading({ isLoading: true }));
     try {
       const response = await pizzaAPI.fetchPizzas();
+      dispatch(pizzasActions.setIsLoading({ isLoading: false }));
       const pizzas = response.data;
       return { pizzas };
     } catch (error) {
       return rejectWithValue(null);
     } finally {
-      dispatch(pizzasActions.setIsLoading({ isLoading: false }));
+      //dispatch(pizzasActions.setIsLoading({ isLoading: false }));
     }
   }
 );

@@ -62,6 +62,8 @@ const slice = createSlice({
     },
     emptyCart: (state, action: PayloadAction<[]>) => {
       state.cartItems = action.payload;
+      state.totalItemAmount = 0;
+      state.totalPrice = 0;
     },
     removePizza: (state, action: PayloadAction<{ id: string }>) => {
       state.cartItems = state.cartItems.filter(
