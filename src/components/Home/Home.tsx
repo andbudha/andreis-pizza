@@ -19,6 +19,7 @@ export const Home = (props: Props) => {
   const pizzas = useSelector<AppRootState, Pizza[]>(
     (state) => state.pizzas.pizzas
   );
+  const [mounted, setMounted] = useState(false);
 
   console.log(isLoading);
   useEffect(() => {
@@ -30,7 +31,7 @@ export const Home = (props: Props) => {
       <>
         <div key={pizza.id}>
           {isLoading ? (
-            <PizzaCardSkeleton key={pizza.id} />
+            <PizzaCardSkeleton />
           ) : (
             <PizzaCard
               category={pizza.category}

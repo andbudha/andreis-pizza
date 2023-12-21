@@ -16,6 +16,13 @@ export const Cart = (props: CartProps) => {
     (state) => state.cart.cartItems
   );
 
+  const cartItemAmount = useSelector<AppRootState, number>(
+    (state) => state.cart.totalItemAmount
+  );
+  const totalPrice = useSelector<AppRootState, number>(
+    (state) => state.cart.totalPrice
+  );
+
   const cartList = cartItems.map((item) => {
     return <CartItem key={item.id} item={item} />;
   });
@@ -41,13 +48,15 @@ export const Cart = (props: CartProps) => {
           <div className={styles.total_items}>
             <h3>Items in cart:</h3>
             <h3>
-              <span>{0} pcs.</span>
+              <span>
+                {cartItemAmount} {cartItemAmount > 1 ? 'pcs.' : 'pc.'}
+              </span>
             </h3>
           </div>
           <div className={styles.total_price}>
             <h3>Total price:</h3>
             <h3>
-              <span>{0} €.</span>
+              <span>{totalPrice} €.</span>
             </h3>
           </div>
         </div>

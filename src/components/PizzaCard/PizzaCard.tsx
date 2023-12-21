@@ -27,7 +27,10 @@ export const PizzaCard = ({
   types,
 }: PizzaCardProps) => {
   const dispatch = useAppDispatch();
-  const cartItems = useSelector<AppRootState>((state) => state.cart.cartItems);
+  const cartItems = useSelector<AppRootState, CartPizza[]>(
+    (state) => state.cart.cartItems
+  );
+  const cartItemCount = cartItems.find((item) => item.id === id)?.count;
 
   const crustTypes = ['thin-crust', 'thick-crust'];
   const [selectedCrust, setSelectedCrust] = useState(0);
@@ -35,8 +38,7 @@ export const PizzaCard = ({
   const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
 
   console.log(cartItems);
-
-  const addPizzaToCartHandler = () => {
+  const addPizzaToCartHandler = (id: string) => {
     const addedPizza: CartPizza = {
       id,
       imageUrl,
@@ -93,9 +95,16 @@ export const PizzaCard = ({
       </div>
       <div className={styles.card_bottom_box}>
         <div className={styles.pizza_price}>{price} €.</div>
-        <div className={styles.add_to_cart_btn} onClick={addPizzaToCartHandler}>
+        <div
+          className={styles.add_to_cart_btn}
+          onClick={() => addPizzaToCartHandler(id)}
+        >
           <BiCartAdd className={styles.add_to_cart_icon} />
-          <div className={styles.added_items}>{0}</div>
+          {cartItemCount && (
+            <div className={styles.added_items}>
+              {cartItemCount ? cartItemCount : 0}
+            </div>
+          )}
         </div>
       </div>
     </div>
