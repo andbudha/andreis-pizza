@@ -57,45 +57,45 @@ export const PizzaCard = ({
       </div>
       <div className={styles.pizza_detail_box}>
         <div className={styles.pizza_crust_box}>
-          <div
+          <button
             onClick={() => setSelectedCrust(types[0])}
             className={`${styles.thin_crust_btn} ${
               selectedCrust === types[0] ? styles.selected : ''
             }`}
           >
             {crustTypes[types[0]]}
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => setSelectedCrust(types[1])}
             className={`${styles.thick_crust_btn} ${
               selectedCrust === types[1] ? styles.selected : ''
             }`}
           >
             {crustTypes[types[1]]}
-          </div>
+          </button>
         </div>
         <div className={styles.pizza_size_box}>
-          <div
+          <button
             onClick={() => setSelectedSize(sizes[0])}
             className={`${styles.small_pizza_size_btn} ${
               selectedSize === sizes[0] ? styles.selected : null
             }`}
           >
             {sizes[0]} cm.
-          </div>
-          <div
+          </button>
+          <button
             onClick={() => setSelectedSize(sizes[1])}
             className={`${styles.big_pizza_size_btn} ${
               selectedSize === sizes[1] ? styles.selected : null
             }`}
           >
             {sizes[1]} cm.
-          </div>
+          </button>
         </div>
       </div>
       <div className={styles.card_bottom_box}>
         <div className={styles.pizza_price}>{price} €.</div>
-        <div
+        <button
           className={styles.add_to_cart_btn}
           onClick={() => addPizzaToCartHandler(id)}
         >
@@ -105,7 +105,7 @@ export const PizzaCard = ({
               {cartItemCount ? cartItemCount : 0}
             </div>
           )}
-        </div>
+        </button>
       </div>
     </div>
   );
