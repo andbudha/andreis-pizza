@@ -65,51 +65,87 @@
       color: $secondary_color;
       @include flexBox(nowrap, row, space-around, center);
 
-      .remove_cart_item_icon {
-        height: 24px;
-        width: 24px;
-        border-radius: 12px;
-        cursor: pointer;
+      .remove_cart_item_btn {
+        height: 26px;
+        width: 26px;
+        border: none;
+        border-radius: 13px;
+        background-color: $additional_color;
+        color: $secondary_color;
+        @include flexBox(nowrap, column, center, center);
+
+        .remove_cart_item_icon {
+          height: 100%;
+          width: 100%;
+          border-radius: 13px;
+          cursor: pointer;
+        }
+        .remove_cart_item_icon:active {
+          height: 20px;
+          width: 20px;
+        }
+        .remove_cart_item_icon:hover {
+          transition: ease-in-out all 0.3s;
+          background-color: $secondary_color;
+          color: $additional_color;
+        }
+
+        .remove_cart_item_icon:not(:hover) {
+          transition: ease-in-out all 0.5s;
+        }
       }
 
-      .remove_cart_item_icon:active {
-        height: 22px;
-        width: 22px;
-        border-radius: 11px;
-      }
-      .remove_cart_item_icon:hover {
-        transition: ease-in-out all 0.3s;
-        background-color: $secondary_color;
-        color: $additional_color;
+      .remove_cart_item_btn:disabled {
+        height: 26px;
+        width: 26px;
+        background-color: $shadow_color;
+
+        .remove_cart_item_icon {
+          height: 100%;
+          width: 100%;
+          background-color: $shadow_color;
+        }
+
+        .remove_cart_item_icon:hover {
+          background-color: $shadow_color;
+          color: $secondary_color;
+        }
       }
 
-      .remove_cart_item_icon:not(:hover) {
-        transition: ease-in-out all 0.5s;
-      }
       .cart_item_count {
         font-size: larger;
         font-weight: bold;
       }
-      .add_cart_item_icon {
-        height: 24px;
-        width: 24px;
-        border-radius: 12px;
-        cursor: pointer;
-      }
 
-      .add_cart_item_icon:active {
-        height: 22px;
-        width: 22px;
-        border-radius: 11px;
-      }
-      .add_cart_item_icon:hover {
-        transition: ease-in-out all 0.3s;
-        background-color: $secondary_color;
-        color: $additional_color;
-      }
+      .add_cart_item_btn {
+        height: 26px;
+        width: 26px;
+        border: none;
+        border-radius: 13px;
+        background-color: $additional_color;
+        color: $secondary_color;
+        @include flexBox(nowrap, column, center, center);
 
-      .add_cart_item_icon:not(:hover) {
-        transition: ease-in-out all 0.5s;
+        .add_cart_item_icon {
+          height: 100%;
+          width: 100%;
+          border-radius: 13px;
+          cursor: pointer;
+        }
+
+        .add_cart_item_icon:active {
+          height: 20px;
+          width: 20px;
+        }
+        .add_cart_item_icon:hover {
+          transition: ease-in-out all 0.3s;
+          background-color: $secondary_color;
+          color: $additional_color;
+        }
+
+        .add_cart_item_icon:not(:hover) {
+          transition: ease-in-out all 0.5s;
+        }
       }
     }
 
