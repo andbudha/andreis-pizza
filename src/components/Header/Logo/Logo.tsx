@@ -1,6 +1,6 @@
 // @flow
 import styles from './Logo.module.scss';
-import logo from '../../../assets/images/logo/pizza_logo2_no_bg.png';
+import logo from '../../../assets/images/logo/logo.png';
 import { Link } from 'react-router-dom';
 type Props = {};
 export const Logo = (props: Props) => {
