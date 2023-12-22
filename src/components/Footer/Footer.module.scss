@@ -13,53 +13,52 @@
   padding: 0 20px;
   @include flexBox(nowrap, column, space-between, center);
 
-  .info_box {
-    height: 60px;
-    width: 100%;
-    @include flexBox(nowrap, row, space-between, center);
+  // .info_box {
+  //   height: 60px;
+  //   width: 100%;
+  //   @include flexBox(nowrap, row, space-between, center);
 
-    .total_price {
-      height: 70%;
-      width: 50%;
-      padding-left: 20px;
-      color: $secondary_color;
-      @include flexBox(nowrap, row, left, center);
-      span {
-        font-size: large;
-        font-weight: bold;
-        color: $primary_color;
-        margin-left: 10px;
-      }
-    }
-    .total_items {
-      height: 70%;
-      width: 50%;
-      padding-right: 20px;
-      color: $secondary_color;
-      @include flexBox(nowrap, row, right, center);
-      span {
-        font-size: large;
-        font-weight: bold;
-        color: $primary_color;
-        margin-left: 10px;
-      }
-    }
-    @media (max-width: 640px) {
-      .total_price {
-        @include flexBox(no-wrap, column, space-between, center);
-        padding-left: 0px;
-      }
-      .total_items {
-        @include flexBox(no-wrap, column, space-between, center);
-        padding-right: 0px;
-      }
-    }
-  }
+  //   .total_price {
+  //     height: 70%;
+  //     width: 50%;
+  //     padding-left: 20px;
+  //     color: $secondary_color;
+  //     @include flexBox(nowrap, row, left, center);
+  //     span {
+  //       font-size: large;
+  //       font-weight: bold;
+  //       color: $primary_color;
+  //       margin-left: 10px;
+  //     }
+  //   }
+  //   .total_items {
+  //     height: 70%;
+  //     width: 50%;
+  //     padding-right: 20px;
+  //     color: $secondary_color;
+  //     @include flexBox(nowrap, row, right, center);
+  //     span {
+  //       font-size: large;
+  //       font-weight: bold;
+  //       color: $primary_color;
+  //       margin-left: 10px;
+  //     }
+  //   }
+  //   @media (max-width: 640px) {
+  //     .total_price {
+  //       @include flexBox(no-wrap, column, space-between, center);
+  //       padding-left: 0px;
+  //     }
+  //     .total_items {
+  //       @include flexBox(no-wrap, column, space-between, center);
+  //       padding-right: 0px;
+  //     }
+  //   }
+  // }
 
   .pagination_box {
-    height: 60px;
+    height: 100%;
     width: 100%;
-    //   @include flexBox(nowrap, row, center, center);
   }
 }
 @media (max-width: 640px) {

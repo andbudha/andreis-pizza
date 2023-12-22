@@ -8,14 +8,14 @@
 }
 
 .paginator_container {
-  height: 50px;
+  height: 100%;
   width: 100%;
   @include flexBox(nowrap, row, center, center);
 
   .page_button_box {
-    height: 50px;
+    height: 100%;
     width: 60px;
-    @include flexBox(nowrap, row, center, start);
+    @include flexBox(nowrap, row, center, center);
 
     .page_button {
       height: 38px;

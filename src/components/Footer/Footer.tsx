@@ -13,7 +13,7 @@ export const Footer = (props: Props) => {
   );
   return (
     <div className={styles.footer_container}>
-      <div className={styles.info_box}>
+      {/* <div className={styles.info_box}>
         <div className={styles.total_price}>
           <h3>Total price:</h3>
           <h3>
@@ -28,7 +28,7 @@ export const Footer = (props: Props) => {
             </span>
           </h3>
         </div>
-      </div>
+      </div> */}
       <div className={styles.pagination_box}>
         <Paginator />
       </div>
