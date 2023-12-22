@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Filter } from '../Filter/Filter';
 import { Footer } from '../Footer/Footer';
 import { PizzaCard } from '../PizzaCard/PizzaCard';
 import styles from './Home.module.scss';
-import axios from 'axios';
 import { Pizza } from '../../assets/types/types';
 import { AppRootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
@@ -16,12 +15,21 @@ export const Home = (props: Props) => {
   const isLoading = useSelector<AppRootState, boolean>(
     (state) => state.pizzas.isLoading
   );
-  const pizzas = useSelector<AppRootState, Pizza[]>(
+  const allPizzas = useSelector<AppRootState, Pizza[]>(
     (state) => state.pizzas.pizzas
   );
-  const [mounted, setMounted] = useState(false);
+  const itemsPerPage = useSelector<AppRootState, number>(
+    (state) => state.filters.itemsPerPage
+  );
+  const currentPage = useSelector<AppRootState, number>(
+    (state) => state.filters.selectedPage
+  );
 
-  console.log(isLoading);
+  // Logic to display the items for the current page
+  const lastItemIndex = currentPage * itemsPerPage;
+  const firstItemIndex = lastItemIndex - itemsPerPage;
+  const pizzas = allPizzas.slice(firstItemIndex, lastItemIndex);
+
   useEffect(() => {
     dispatch(pizzaSliceThunks.fetchPizzas());
   }, []);

@@ -59,7 +59,7 @@
   .pagination_box {
     height: 60px;
     width: 100%;
-    @include flexBox(nowrap, row, center, center);
+    //   @include flexBox(nowrap, row, center, center);
   }
 }
 @media (max-width: 640px) {

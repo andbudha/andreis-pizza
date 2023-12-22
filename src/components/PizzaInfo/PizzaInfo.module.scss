@@ -1,0 +1,14 @@
+@import '../../assets/sass/mixins.scss';
+@import '../../assets/sass/variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pizza_info_container {
+  height: 500px;
+  width: 100%;
+  @include flexBox(nowrap, row, center, center);
+}

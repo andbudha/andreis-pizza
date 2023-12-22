@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { AppRootState } from '../../redux/store';
 import styles from './Footer.module.scss';
+import { Paginator } from '../Paginator/Paginator';
 
 type Props = {};
 export const Footer = (props: Props) => {
@@ -29,7 +30,7 @@ export const Footer = (props: Props) => {
         </div>
       </div>
       <div className={styles.pagination_box}>
-        <h3>...123...</h3>
+        <Paginator />
       </div>
     </div>
   );

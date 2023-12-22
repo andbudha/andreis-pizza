@@ -16,20 +16,25 @@
   @include flexBox(nowrap, column, space-around, center);
   //box-shadow: $shadow_color 0px 8px 24px;
 
-  .pizza_img_box {
-    width: 260px;
-    height: 280px;
-    @include flexBox(nowrap, column, space-around, center);
-    font-size: large;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: $secondary_color;
+  .pizza_info_link {
+    text-decoration: none;
 
-    .pizza_img {
-      width: 240px;
-      height: 240px;
+    .pizza_img_box {
+      width: 260px;
+      height: 280px;
+      @include flexBox(nowrap, column, space-around, center);
+      font-size: large;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: $secondary_color;
+
+      .pizza_img {
+        width: 240px;
+        height: 240px;
+      }
     }
   }
+
   .pizza_detail_box {
     height: 80px;
     width: 250px;

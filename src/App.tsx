@@ -4,6 +4,7 @@ import { Home } from './components/Home/Home';
 import { Cart } from './components/Cart/Cart';
 import { Header } from './components/Header/Header';
 import { EmptyCart } from './components/Cart/EmptyCart/EmptyCart';
+import { PizzaInfo } from './components/PizzaInfo/PizzaInfo';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/emptycart" element={<EmptyCart />} />
+            <Route path="/pizzainfo/:id" element={<PizzaInfo />} />
           </Routes>
         </div>
       </div>

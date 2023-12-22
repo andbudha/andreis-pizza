@@ -7,6 +7,7 @@ export const instance = axios.create({
 
 export const pizzaAPI = {
   fetchPizzas: () => {
-    return instance.get<Pizza[]>('?&limit=6&page=1');
+    return instance.get<Pizza[]>('');
+    // return instance.get<Pizza[]>('?&limit=6&page=1');
   },
 };

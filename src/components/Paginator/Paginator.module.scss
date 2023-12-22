@@ -1,0 +1,51 @@
+@import '../../assets/sass/mixins.scss';
+@import '../..//assets/sass/variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.paginator_container {
+  height: 50px;
+  width: 100%;
+  @include flexBox(nowrap, row, center, center);
+
+  .page_button_box {
+    height: 50px;
+    width: 60px;
+    @include flexBox(nowrap, row, center, start);
+
+    .page_button {
+      height: 38px;
+      width: 38px;
+      border-radius: 19px;
+      border: 2px solid $secondary_color;
+      font-size: medium;
+      font-weight: bold;
+      color: $secondary_color;
+      background-color: $additional_color;
+      cursor: pointer;
+    }
+
+    .selected_page {
+      background-color: $secondary_color;
+      color: $additional_color;
+    }
+    .page_button:active {
+      height: 34px;
+      width: 34px;
+    }
+
+    .page_button:hover {
+      transition: ease-in-out all 0.3s;
+      background-color: $secondary_color;
+      color: $additional_color;
+    }
+
+    .page_button:not(:hover) {
+      transition: ease-in-out all 0.5s;
+    }
+  }
+}

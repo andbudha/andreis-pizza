@@ -5,6 +5,7 @@ import { AppRootState, useAppDispatch } from '../../redux/store';
 import { cartActions } from '../../redux/slices/cartSlice';
 import { CartPizza } from '../../assets/types/types';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 type PizzaCardProps = {
   category: number;
@@ -51,10 +52,12 @@ export const PizzaCard = ({
   };
   return (
     <div className={styles.pizza_card_container}>
-      <div className={styles.pizza_img_box}>
-        <img className={styles.pizza_img} src={imageUrl} alt="pizza image" />
-        <div className={styles.pizza_name}>{name}</div>
-      </div>
+      <Link to={`/pizzainfo/${id}`} className={styles.pizza_info_link}>
+        <div className={styles.pizza_img_box}>
+          <img className={styles.pizza_img} src={imageUrl} alt="pizza image" />
+          <div className={styles.pizza_name}>{name}</div>
+        </div>
+      </Link>
       <div className={styles.pizza_detail_box}>
         <div className={styles.pizza_crust_box}>
           <button
