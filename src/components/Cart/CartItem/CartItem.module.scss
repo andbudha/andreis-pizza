@@ -71,7 +71,7 @@
         border: none;
         border-radius: 13px;
         background-color: $additional_color;
-        color: $secondary_color;
+        color: $primary_color;
         @include flexBox(nowrap, column, center, center);
 
         .remove_cart_item_icon {
@@ -86,8 +86,7 @@
         }
         .remove_cart_item_icon:hover {
           transition: ease-in-out all 0.3s;
-          background-color: $secondary_color;
-          color: $additional_color;
+          color: $secondary_color;
         }
 
         .remove_cart_item_icon:not(:hover) {
@@ -98,17 +97,16 @@
       .remove_cart_item_btn:disabled {
         height: 26px;
         width: 26px;
-        background-color: $shadow_color;
+        background-color: $hover_color;
+        color: $additional_color;
 
         .remove_cart_item_icon {
           height: 100%;
           width: 100%;
-          background-color: $shadow_color;
         }
-
         .remove_cart_item_icon:hover {
-          background-color: $shadow_color;
-          color: $secondary_color;
+          background-color: $hover_color;
+          color: $additional_color;
         }
       }
 
@@ -123,7 +121,7 @@
         border: none;
         border-radius: 13px;
         background-color: $additional_color;
-        color: $secondary_color;
+        color: $primary_color;
         @include flexBox(nowrap, column, center, center);
 
         .add_cart_item_icon {
@@ -139,8 +137,7 @@
         }
         .add_cart_item_icon:hover {
           transition: ease-in-out all 0.3s;
-          background-color: $secondary_color;
-          color: $additional_color;
+          color: $secondary_color;
         }
 
         .add_cart_item_icon:not(:hover) {
@@ -152,7 +149,7 @@
     .delete_cart_item_icon_box {
       height: 50px;
       width: 50px;
-      color: $secondary_color;
+      color: $primary_color;
       @include flexBox(nowrap, row, center, center);
 
       .delete_cart_item_icon {

@@ -21,10 +21,10 @@
       height: 38px;
       width: 38px;
       border-radius: 19px;
-      border: 2px solid $secondary_color;
+      border: 2px solid $border_color;
       font-size: medium;
       font-weight: bold;
-      color: $secondary_color;
+      color: $primary_color;
       background-color: $additional_color;
       cursor: pointer;
     }
@@ -40,7 +40,7 @@
 
     .page_button:hover {
       transition: ease-in-out all 0.3s;
-      background-color: $secondary_color;
+      background-color: $hover_color;
       color: $additional_color;
     }
 

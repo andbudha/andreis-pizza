@@ -35,8 +35,8 @@
       width: 150px;
       border-radius: 25px;
       background-color: $additional_color;
-      border: 1px solid $primary_color;
-      color: $secondary_color;
+      border: 1px solid $border_color;
+      color: $primary_color;
       font-size: medium;
       font-weight: bold;
       cursor: pointer;
@@ -51,7 +51,7 @@
 
     .back_home_btn:hover {
       transition: ease-in-out all 0.3s;
-      background-color: $secondary_color;
+      background-color: $hover_color;
       color: $additional_color;
     }
 

@@ -24,7 +24,7 @@
       border-radius: 25px;
       background-color: $additional_color;
       border: 1px solid $primary_color;
-      color: $secondary_color;
+      color: $primary_color;
       font-size: medium;
       font-weight: bold;
       cursor: pointer;
@@ -34,17 +34,25 @@
         margin-right: 5px;
         width: 24px;
         height: 24px;
+        color: $primary_color;
       }
     }
 
     .empty_cart_btn:hover {
       transition: ease-in-out all 0.3s;
-      background-color: $secondary_color;
+      background-color: $hover_color;
       color: $additional_color;
+      .empty_cart_icon {
+        transition: ease-in-out all 0.3s;
+        color: $additional_color;
+      }
     }
 
     .empty_cart_btn:not(:hover) {
       transition: ease-in-out all 0.5s;
+      .empty_cart_icon {
+        transition: ease-in-out all 0.3s;
+      }
     }
   }
 
