@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Filter } from '../Filter/Filter';
 import { Footer } from '../Footer/Footer';
 import { PizzaCard } from '../PizzaCard/PizzaCard';
@@ -7,11 +7,14 @@ import { Pizza } from '../../assets/types/types';
 import { AppRootState, useAppDispatch } from '../../redux/store';
 import { useSelector } from 'react-redux';
 import { pizzaSliceThunks } from '../../redux/slices/pizzaSlice';
+import { FaChevronUp } from 'react-icons/fa6';
+import { IoFilter } from 'react-icons/io5';
 import { PizzaCardSkeleton } from '../PizzaCard/PizzaCardSkeleton/PizzaCardSkeleton';
 
 type Props = {};
 export const Home = (props: Props) => {
   const dispatch = useAppDispatch();
+  const [showFilterMenu, setShowFilterMenu] = useState(false);
   const isLoading = useSelector<AppRootState, boolean>(
     (state) => state.pizzas.isLoading
   );
@@ -57,9 +60,19 @@ export const Home = (props: Props) => {
     );
   });
 
+  const operateMenuHandler = () => {
+    setShowFilterMenu(!showFilterMenu);
+  };
   return (
     <div className={styles.home_container}>
-      <Filter />
+      <div className={styles.filtering_box} onClick={operateMenuHandler}>
+        {showFilterMenu ? (
+          <FaChevronUp className={styles.chevron_icon} />
+        ) : (
+          <IoFilter className={styles.filter_icon} />
+        )}
+      </div>
+      {showFilterMenu && <Filter />}
       <div className={styles.pizza_grid_box}>{pizzaList}</div>
       <Footer />
     </div>

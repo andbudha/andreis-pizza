@@ -12,6 +12,26 @@
   background-color: #fff;
   border-radius: 0 0 10px 10px;
 
+  .filtering_box {
+    display: none;
+    height: 60px;
+    width: 100%;
+    @include flexBox(nowrap, column, center, center);
+
+    .chevron_icon {
+      width: 30px;
+      height: 30px;
+      color: $primary_color;
+      cursor: pointer;
+    }
+    .filter_icon {
+      width: 30px;
+      height: 30px;
+      color: $primary_color;
+      cursor: pointer;
+    }
+  }
+
   .pizza_grid_box {
     height: fit-content;
     width: 100%;
@@ -21,8 +41,9 @@
     grid-row-gap: 10px;
     justify-items: center;
     align-items: center;
-    padding-bottom: 25px;
+    padding: 25px 0;
     border-bottom: 1px solid $border_color;
+    border-top: 1px solid $border_color;
   }
   @media (max-width: 1000px) {
     .pizza_grid_box {
