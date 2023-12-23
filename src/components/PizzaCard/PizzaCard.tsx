@@ -38,7 +38,6 @@ export const PizzaCard = ({
   const [selectedSize, setSelectedSize] = useState(26);
   const crustType = selectedCrust === 0 ? 'thin-crust' : 'thick-crust';
 
-  console.log(cartItems);
   const addPizzaToCartHandler = (id: string) => {
     const addedPizza: CartPizza = {
       id,

@@ -12,8 +12,6 @@ export const CartInfo = (props: Props) => {
     (state) => state.cart.totalPrice
   );
 
-  console.log(cartItemAmount);
-
   return (
     <Link to={'/cart'} className={styles.link}>
       <>
