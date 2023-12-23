@@ -13,12 +13,29 @@ export const PizzaInfo = (props: PizzaInfoProps) => {
 
   console.log(id);
 
-  const pizzaImage = pizzas.find((pizza) => pizza.id === id)?.imageUrl;
-  console.log(pizzaImage);
+  const pizza = pizzas.find((pizza) => pizza.id === id);
+
   return (
     <div className={styles.pizza_info_container}>
-      <h1>Pizza Info</h1>
-      <img src={pizzaImage} alt="" />
+      <div className={styles.pizza_img_box}>
+        <img
+          className={styles.pizza_img}
+          src={pizza?.imageUrl}
+          alt="pizza image"
+        />
+      </div>
+      <div className={styles.pizza_detail_box}>
+        <h3>{pizza?.name}</h3>
+        <div className={styles.pizza_details}>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium
+            provident harum consequatur labore nobis voluptates similique? Quam,
+            perferendis. Eveniet, maiores dignissimos! Voluptas dicta non
+            dolorum quos itaque cupiditate excepturi sequi dolor, minus
+            temporibus corrupti vitae. Repudiandae harum iusto esse nobis!
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
