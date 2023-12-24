@@ -67,7 +67,7 @@ export const Home = (props: Props) => {
       </>
     );
   });
-
+  const emptyCard = isLoading ? <PizzaCardSkeleton /> : <NoMatchPizzaCard />;
   const operateMenuHandler = () => {
     setShowFilterMenu(!showFilterMenu);
   };
@@ -82,7 +82,7 @@ export const Home = (props: Props) => {
       </div>
       {showFilterMenu && <Filter />}
       <div className={styles.pizza_grid_box}>
-        {pizzaList.length ? pizzaList : <NoMatchPizzaCard />}
+        {pizzaList.length ? pizzaList : emptyCard}
       </div>
       <Footer pizzas={pizzas} />
     </div>
