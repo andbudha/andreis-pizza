@@ -2,11 +2,10 @@ import styles from './Paginator.module.scss';
 import { useSelector } from 'react-redux';
 import { AppRootState, useAppDispatch } from '../../redux/store';
 import { Pizza } from '../../assets/types/types';
-import { useState } from 'react';
 import { filterActions } from '../../redux/slices/filterSlice';
 
-type Props = {};
-export const Paginator = (props: Props) => {
+type PaginatorProps = {};
+export const Paginator = ({}: PaginatorProps) => {
   const dispatch = useAppDispatch();
   const allPizzas = useSelector<AppRootState, Pizza[]>(
     (state) => state.pizzas.pizzas
@@ -29,7 +28,7 @@ export const Paginator = (props: Props) => {
 
   return (
     <div className={styles.paginator_container}>
-      {pages.map((page, index) => (
+      {pages.map((page) => (
         <div key={page} className={styles.page_button_box}>
           <button
             className={`${styles.page_button} ${

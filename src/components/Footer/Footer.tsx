@@ -2,9 +2,12 @@ import { useSelector } from 'react-redux';
 import { AppRootState } from '../../redux/store';
 import styles from './Footer.module.scss';
 import { Paginator } from '../Paginator/Paginator';
+import { Pizza } from '../../assets/types/types';
 
-type Props = {};
-export const Footer = (props: Props) => {
+type FooterProps = {
+  pizzas: Pizza[];
+};
+export const Footer = ({ pizzas }: FooterProps) => {
   const cartItemAmount = useSelector<AppRootState, number>(
     (state) => state.cart.totalItemAmount
   );
@@ -13,22 +16,6 @@ export const Footer = (props: Props) => {
   );
   return (
     <div className={styles.footer_container}>
-      {/* <div className={styles.info_box}>
-        <div className={styles.total_price}>
-          <h3>Total price:</h3>
-          <h3>
-            <span>{totalPrice} €.</span>
-          </h3>
-        </div>
-        <div className={styles.total_items}>
-          <h3>Items in cart:</h3>
-          <h3>
-            <span>
-              {cartItemAmount} {cartItemAmount > 1 ? 'pcs.' : 'pc.'}
-            </span>
-          </h3>
-        </div>
-      </div> */}
       <div className={styles.pagination_box}>
         <Paginator />
       </div>

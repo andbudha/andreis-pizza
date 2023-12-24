@@ -10,6 +10,7 @@ import { pizzaSliceThunks } from '../../redux/slices/pizzaSlice';
 import { FaChevronUp } from 'react-icons/fa6';
 import { IoFilter } from 'react-icons/io5';
 import { PizzaCardSkeleton } from '../PizzaCard/PizzaCardSkeleton/PizzaCardSkeleton';
+import { NoMatchPizzaCard } from '../PizzaCard/NoMatchPizzaCard/NoMatchPizzaCard';
 
 type Props = {};
 export const Home = (props: Props) => {
@@ -30,7 +31,6 @@ export const Home = (props: Props) => {
   const activeCategory = useSelector<AppRootState, number>(
     (state) => state.pizzas.activeCategory
   );
-  console.log(activeCategory);
 
   const filteredPizzas =
     activeCategory === 0
@@ -81,8 +81,10 @@ export const Home = (props: Props) => {
         )}
       </div>
       {showFilterMenu && <Filter />}
-      <div className={styles.pizza_grid_box}>{pizzaList}</div>
-      <Footer />
+      <div className={styles.pizza_grid_box}>
+        {pizzaList.length ? pizzaList : <NoMatchPizzaCard />}
+      </div>
+      <Footer pizzas={pizzas} />
     </div>
   );
 };
