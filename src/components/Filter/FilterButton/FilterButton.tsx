@@ -9,12 +9,15 @@ export const FilterButton = ({
   activeType,
   setActiveType,
 }: FilterButtonProps) => {
+  const setActiveTypeHandler = (type: string) => {
+    setActiveType(type);
+  };
   return (
     <div
       className={`${styles.filter_btn} ${
         activeType === type ? styles.selected : ''
       }`}
-      onClick={() => setActiveType(type)}
+      onClick={() => setActiveTypeHandler(type)}
     >
       {type}
     </div>

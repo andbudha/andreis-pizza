@@ -7,10 +7,14 @@ export const slice = createSlice({
   initialState: {
     isLoading: false as boolean,
     pizzas: [] as Pizza[],
+    activeCategory: 0 as number,
   },
   reducers: {
     setIsLoading: (state, action: PayloadAction<{ isLoading: boolean }>) => {
       state.isLoading = action.payload.isLoading;
+    },
+    setActiveCategory: (state, action: PayloadAction<{ category: number }>) => {
+      state.activeCategory = action.payload.category;
     },
   },
   extraReducers: (builder) => {
@@ -39,5 +43,5 @@ const fetchPizzas = createAsyncThunk<{ pizzas: Pizza[] }>(
   }
 );
 export const pizzas = slice.reducer;
-const pizzasActions = slice.actions;
+export const pizzasActions = slice.actions;
 export const pizzaSliceThunks = { fetchPizzas };

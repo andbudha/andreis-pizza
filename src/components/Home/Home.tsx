@@ -27,15 +27,23 @@ export const Home = (props: Props) => {
   const currentPage = useSelector<AppRootState, number>(
     (state) => state.filters.selectedPage
   );
+  const activeCategory = useSelector<AppRootState, number>(
+    (state) => state.pizzas.activeCategory
+  );
+  console.log(activeCategory);
 
+  const filteredPizzas =
+    activeCategory === 0
+      ? allPizzas
+      : allPizzas.filter((pizza) => pizza.category === activeCategory);
   // Logic to display the items for the current page
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
-  const pizzas = allPizzas.slice(firstItemIndex, lastItemIndex);
+  const pizzas = filteredPizzas.slice(firstItemIndex, lastItemIndex);
 
   useEffect(() => {
     dispatch(pizzaSliceThunks.fetchPizzas());
-  }, []);
+  }, [activeCategory]);
 
   const pizzaList = pizzas.map((pizza) => {
     return (
