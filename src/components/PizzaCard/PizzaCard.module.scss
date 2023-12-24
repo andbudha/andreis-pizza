@@ -10,8 +10,6 @@
 .pizza_card_container {
   width: 290px;
   height: 420px;
-  // border: 1px solid $border_color;
-  border-radius: 10px;
   margin: 5px;
   @include flexBox(nowrap, column, space-around, center);
   //box-shadow: $shadow_color 0px 8px 24px;
