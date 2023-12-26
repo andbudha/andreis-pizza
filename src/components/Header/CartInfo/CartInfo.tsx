@@ -42,13 +42,13 @@ export const CartInfo = (props: Props) => {
     <Link to={'/cart'} className={styles.link}>
       <>
         <div className={styles.cartinfo_container}>
-          <div className={styles.total_price_box}>
-            {localStorageTotalPrice}€
-          </div>
-          <div className={styles.separation_box}></div>
           <div className={styles.item_amount_box}>
             <BiCart className={styles.cart_icon} color="white" />
             <div className={styles.item_amount}>{localStorageItemAmount}</div>
+          </div>
+          <div className={styles.separation_box}></div>
+          <div className={styles.total_price_box}>
+            {localStorageTotalPrice}€
           </div>
         </div>
       </>

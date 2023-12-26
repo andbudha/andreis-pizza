@@ -31,14 +31,21 @@ export const Home = () => {
     (state) => state.pizzas.activeCategory
   );
 
+  const searchInputValue = useSelector<AppRootState, string>(
+    (state) => state.filters.searchValue
+  );
+
   const filteredPizzas =
     activeCategory === 0
       ? allPizzas
       : allPizzas.filter((pizza) => pizza.category === activeCategory);
 
+  const searchFilteredPizzas = filteredPizzas.filter((item) =>
+    item.name.toLowerCase().includes(searchInputValue.toLocaleLowerCase())
+  );
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
-  const pizzas = filteredPizzas.slice(firstItemIndex, lastItemIndex);
+  const pizzas = searchFilteredPizzas.slice(firstItemIndex, lastItemIndex);
 
   useEffect(() => {
     dispatch(pizzaSliceThunks.fetchPizzas());

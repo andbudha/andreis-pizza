@@ -1,4 +1,5 @@
 // @flow
+import { useLocation } from 'react-router-dom';
 import { CartInfo } from './CartInfo/CartInfo';
 import styles from './Header.module.scss';
 import { Logo } from './Logo/Logo';
@@ -9,7 +10,7 @@ export const Header = (props: Props) => {
   return (
     <div className={styles.header_container}>
       <Logo />
-      <Search />
+      {useLocation().pathname !== '/cart' && <Search />}
       <CartInfo />
     </div>
   );
