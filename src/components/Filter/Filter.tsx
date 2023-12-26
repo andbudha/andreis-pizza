@@ -8,7 +8,7 @@ type FilterProps = {};
 export const Filter = ({}: FilterProps) => {
   const dispatch = useAppDispatch();
   const activeType = useSelector<AppRootState, string>(
-    (state) => state.pizzas.activeType
+    (state) => state.filters.activeType
   );
   const pizzaType = ['All', 'Meat Lovers', 'Cheese', 'Vegetarian'];
   const activeCategory = pizzaType.findIndex((item) => item === activeType);
