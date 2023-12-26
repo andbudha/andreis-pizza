@@ -23,19 +23,21 @@ export const CartInfo = (props: Props) => {
       localStorage.setItem('cart', JSON.stringify(cartItems));
     }
     setIsMounted(true);
-    // const totalPriceFromLS = getLocalStorageItems().reduce(
-    //   (amount: number, item: CartPizza) =>
-    //     item.count ? amount + item.count * item.price : 0,
-    //   0
-    // );
 
-    // const itemAmountFromLocalStorage = getLocalStorageItems().reduce(
-    //   (amount: number, item: CartPizza) =>
-    //     item.count ? amount + item.count : 0,
-    //   0
-    // );
-    // setLocalStorageTotalPrice(totalPriceFromLS);
-    // setLocalStorageItemAmount(itemAmountFromLocalStorage);
+    const totalPriceFromLS = getLocalStorageItems().reduce(
+      (amount: number, item: CartPizza) =>
+        item.count ? amount + item.count * item.price : 0,
+      0
+    );
+
+    const itemAmountFromLocalStorage = getLocalStorageItems().reduce(
+      (amount: number, item: CartPizza) =>
+        item.count ? amount + item.count : 0,
+      0
+    );
+
+    setLocalStorageTotalPrice(totalPriceFromLS);
+    setLocalStorageItemAmount(itemAmountFromLocalStorage);
   }, [cartItems, cartItemAmount]);
 
   return (
