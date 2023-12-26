@@ -19,6 +19,23 @@ export const CartInfo = (props: Props) => {
   );
 
   useEffect(() => {
+    const totalPriceFromLS = getLocalStorageItems().reduce(
+      (amount: number, item: CartPizza) =>
+        item.count ? amount + item.count * item.price : 0,
+      0
+    );
+
+    const itemAmountFromLocalStorage = getLocalStorageItems().reduce(
+      (amount: number, item: CartPizza) =>
+        item.count ? amount + item.count : 0,
+      0
+    );
+
+    setLocalStorageTotalPrice(totalPriceFromLS);
+    setLocalStorageItemAmount(itemAmountFromLocalStorage);
+  }, [cartItems, cartItemAmount]);
+
+  useEffect(() => {
     if (isMounted) {
       localStorage.setItem('cart', JSON.stringify(cartItems));
     }
