@@ -15,6 +15,7 @@
 
   .search_box {
     position: relative;
+    color: $primary_color;
     @include flexBox(nowrap, row, center, center);
 
     .input_box {
@@ -27,11 +28,14 @@
       font-size: large;
       font-weight: bold;
       letter-spacing: 1px;
-      color: $secondary_color;
+      color: $primary_color;
     }
     .input_box:focus {
-      border: 3px solid $primary_color;
-      color: $secondary_color;
+      border: 2px solid $primary_color;
+      color: $primary_color;
+    }
+    .input_box::placeholder {
+      color: $primary_color;
     }
 
     .search_icon {

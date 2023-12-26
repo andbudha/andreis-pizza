@@ -1,14 +1,37 @@
+import { ChangeEvent } from 'react';
 import styles from './Search.module.scss';
 import { IoMdSearch, IoMdClose } from 'react-icons/io';
-type Props = {};
-export const Search = (props: Props) => {
+import { AppRootState, useAppDispatch } from '../../../redux/store';
+import { filterActions } from '../../../redux/slices/filterSlice';
+import { useSelector } from 'react-redux';
+
+export const Search = () => {
+  const disptach = useAppDispatch();
+  const inputValue = useSelector<AppRootState, string>(
+    (state) => state.filters.searchValue
+  );
+
+  console.log(inputValue);
+  const inputValueHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    disptach(
+      filterActions.setSearchValue({ searchValue: event.currentTarget.value })
+    );
+  };
+
+  const emptyImputHandler = () => {
+    disptach(filterActions.setSearchValue({ searchValue: '' }));
+  };
   return (
     <div className={styles.search_container}>
       <div className={styles.search_box}>
-        {' '}
         <IoMdSearch className={styles.search_icon} />
-        <input className={styles.input_box} placeholder="Search pizza..." />
-        <IoMdClose className={styles.remove_icon} />
+        <input
+          value={inputValue}
+          className={styles.input_box}
+          placeholder="Search pizza..."
+          onChange={inputValueHandler}
+        />
+        <IoMdClose className={styles.remove_icon} onClick={emptyImputHandler} />
       </div>
     </div>
   );

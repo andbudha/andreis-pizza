@@ -7,6 +7,7 @@ const slice = createSlice({
     selectedPage: 1 as number,
     itemsPerPage: 6 as number,
     activeType: 'All' as ActiveType,
+    searchValue: '' as string,
   },
   reducers: {
     setSelectedPage: (
@@ -20,6 +21,9 @@ const slice = createSlice({
       action: PayloadAction<{ activeType: ActiveType }>
     ) => {
       state.activeType = action.payload.activeType;
+    },
+    setSearchValue: (state, action: PayloadAction<{ searchValue: string }>) => {
+      state.searchValue = action.payload.searchValue;
     },
   },
 });
