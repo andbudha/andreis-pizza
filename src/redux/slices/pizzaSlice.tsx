@@ -1,5 +1,5 @@
 import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { Pizza } from '../../assets/types/types';
+import { ActiveType, Pizza } from '../../assets/types/types';
 import { pizzaAPI } from '../../api/pizzaAPI';
 
 export const slice = createSlice({
@@ -8,6 +8,7 @@ export const slice = createSlice({
     isLoading: false as boolean,
     pizzas: [] as Pizza[],
     activeCategory: 0 as number,
+    activeType: 'All' as ActiveType,
   },
   reducers: {
     setIsLoading: (state, action: PayloadAction<{ isLoading: boolean }>) => {
@@ -15,6 +16,12 @@ export const slice = createSlice({
     },
     setActiveCategory: (state, action: PayloadAction<{ category: number }>) => {
       state.activeCategory = action.payload.category;
+    },
+    setActiveType: (
+      state,
+      action: PayloadAction<{ activeType: ActiveType }>
+    ) => {
+      state.activeType = action.payload.activeType;
     },
   },
   extraReducers: (builder) => {
