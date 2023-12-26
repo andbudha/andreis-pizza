@@ -12,8 +12,7 @@ import { IoFilter } from 'react-icons/io5';
 import { PizzaCardSkeleton } from '../PizzaCard/PizzaCardSkeleton/PizzaCardSkeleton';
 import { NoMatchPizzaCard } from '../PizzaCard/NoMatchPizzaCard/NoMatchPizzaCard';
 
-type Props = {};
-export const Home = (props: Props) => {
+export const Home = () => {
   const dispatch = useAppDispatch();
   const [showFilterMenu, setShowFilterMenu] = useState(false);
   const isLoading = useSelector<AppRootState, boolean>(
@@ -36,7 +35,7 @@ export const Home = (props: Props) => {
     activeCategory === 0
       ? allPizzas
       : allPizzas.filter((pizza) => pizza.category === activeCategory);
-  // Logic to display the items for the current page
+
   const lastItemIndex = currentPage * itemsPerPage;
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const pizzas = filteredPizzas.slice(firstItemIndex, lastItemIndex);
@@ -47,30 +46,30 @@ export const Home = (props: Props) => {
 
   const pizzaList = pizzas.map((pizza) => {
     return (
-      <>
-        <div key={pizza.id}>
-          {isLoading ? (
-            <PizzaCardSkeleton />
-          ) : (
-            <PizzaCard
-              category={pizza.category}
-              id={pizza.id}
-              imageUrl={pizza.imageUrl}
-              name={pizza.name}
-              price={pizza.price}
-              rating={pizza.rating}
-              sizes={pizza.sizes}
-              types={pizza.types}
-            />
-          )}
-        </div>
-      </>
+      <div key={pizza.id}>
+        {isLoading ? (
+          <PizzaCardSkeleton />
+        ) : (
+          <PizzaCard
+            category={pizza.category}
+            id={pizza.id}
+            imageUrl={pizza.imageUrl}
+            name={pizza.name}
+            price={pizza.price}
+            rating={pizza.rating}
+            sizes={pizza.sizes}
+            types={pizza.types}
+          />
+        )}
+      </div>
     );
   });
   const emptyCard = isLoading ? <PizzaCardSkeleton /> : <NoMatchPizzaCard />;
+
   const operateMenuHandler = () => {
     setShowFilterMenu(!showFilterMenu);
   };
+
   return (
     <div className={styles.home_container}>
       <div className={styles.filtering_box} onClick={operateMenuHandler}>

@@ -18,3 +18,5 @@ export type CartPizza = {
   crust: string;
   count?: number | undefined;
 };
+
+export type ActiveType = 'All' | 'Meat Lovers' | 'Cheese' | 'Vegetarian';
