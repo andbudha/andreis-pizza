@@ -8,7 +8,7 @@ export const getLocalStorageItems = () => {
 };
 
 export const totalPriceFromLocalStorage = () => {
-  if (getLocalStorageItems().length) {
+  if (getLocalStorageItems()) {
     return getLocalStorageItems().reduce(
       (amount: number, item: CartPizza) =>
         item.count ? amount + item.count * item.price : 0,
@@ -18,7 +18,7 @@ export const totalPriceFromLocalStorage = () => {
 };
 
 export const itemAmountFromLocalStorage = () => {
-  if (getLocalStorageItems().length) {
+  if (getLocalStorageItems()) {
     return getLocalStorageItems().reduce(
       (amount: number, item: CartPizza) =>
         item.count ? amount + item.count : 0,
