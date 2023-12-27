@@ -7,16 +7,25 @@ export const getLocalStorageItems = () => {
   }
 };
 
-export const totalPriceFromLocalStorage = getLocalStorageItems().reduce(
-  (amount: number, item: CartPizza) =>
-    item.count ? amount + item.count * item.price : 0,
-  0
-);
+export const totalPriceFromLocalStorage = () => {
+  if (getLocalStorageItems().length) {
+    return getLocalStorageItems().reduce(
+      (amount: number, item: CartPizza) =>
+        item.count ? amount + item.count * item.price : 0,
+      0
+    );
+  }
+};
 
-export const itemAmountFromLocalStorage = getLocalStorageItems().reduce(
-  (amount: number, item: CartPizza) => (item.count ? amount + item.count : 0),
-  0
-);
+export const itemAmountFromLocalStorage = () => {
+  if (getLocalStorageItems().length) {
+    return getLocalStorageItems().reduce(
+      (amount: number, item: CartPizza) =>
+        item.count ? amount + item.count : 0,
+      0
+    );
+  }
+};
 
 console.log(totalPriceFromLocalStorage);
 console.log(itemAmountFromLocalStorage);

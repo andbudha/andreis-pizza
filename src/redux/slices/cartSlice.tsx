@@ -10,8 +10,8 @@ const slice = createSlice({
   name: 'cart',
   initialState: {
     cartItems: getLocalStorageItems() || ([] as CartPizza[]),
-    totalItemAmount: itemAmountFromLocalStorage || (0 as number),
-    totalPrice: totalPriceFromLocalStorage || (0 as number),
+    totalItemAmount: itemAmountFromLocalStorage() || (0 as number),
+    totalPrice: totalPriceFromLocalStorage() || (0 as number),
   },
   reducers: {
     addPizza: (state, action: PayloadAction<{ addedPizza: CartPizza }>) => {
