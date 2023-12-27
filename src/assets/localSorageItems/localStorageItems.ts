@@ -26,6 +26,3 @@ export const itemAmountFromLocalStorage = () => {
     );
   }
 };
-
-console.log(totalPriceFromLocalStorage);
-console.log(itemAmountFromLocalStorage);
