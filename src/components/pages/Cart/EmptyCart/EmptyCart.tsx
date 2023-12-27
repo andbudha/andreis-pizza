@@ -1,5 +1,5 @@
 import styles from './EmptyCart.module.scss';
-import emptyCart from '../../../assets/images/cart/empty_cart.png';
+import emptyCart from '../../../../assets/images/cart/empty_cart.png';
 import { IoChevronBack } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 

@@ -5,12 +5,12 @@ import { IoChevronBack } from 'react-icons/io5';
 import { CartItem } from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { AppRootState, useAppDispatch } from '../../redux/store';
-import { CartPizza } from '../../assets/types/types';
-import { cartActions } from '../../redux/slices/cartSlice';
+import { AppRootState, useAppDispatch } from '../../../redux/store';
+import { CartPizza } from '../../../assets/types/types';
+import { cartActions } from '../../../redux/slices/cartSlice';
 import { EmptyCart } from './EmptyCart/EmptyCart';
-type CartProps = {};
-export const Cart = (props: CartProps) => {
+
+export const Cart = () => {
   const dispatch = useAppDispatch();
   const cartItems = useSelector<AppRootState, CartPizza[]>(
     (state) => state.cart.cartItems
@@ -67,7 +67,7 @@ export const Cart = (props: CartProps) => {
               <span>Main</span>
             </div>
           </Link>
-          <Link to={'/'} className={styles.pay_btn_link}>
+          <Link to={'/*'} className={styles.pay_btn_link}>
             <div className={styles.pay_btn}>
               <MdEuroSymbol className={styles.pay_icon} />
               <span>Pay</span>

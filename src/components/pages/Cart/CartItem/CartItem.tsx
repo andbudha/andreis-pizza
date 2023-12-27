@@ -1,9 +1,9 @@
 import styles from './CartItem.module.scss';
 import { GrSubtractCircle, GrAddCircle } from 'react-icons/gr';
 import { RiDeleteBinLine } from 'react-icons/ri';
-import { CartPizza } from '../../../assets/types/types';
-import { AppRootState, useAppDispatch } from '../../../redux/store';
-import { cartActions } from '../../../redux/slices/cartSlice';
+import { CartPizza } from '../../../../assets/types/types';
+import { AppRootState, useAppDispatch } from '../../../../redux/store';
+import { cartActions } from '../../../../redux/slices/cartSlice';
 import { useSelector } from 'react-redux';
 
 type CartItemProps = {

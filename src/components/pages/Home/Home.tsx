@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Filter } from '../Filter/Filter';
-import { Footer } from '../Footer/Footer';
-import { PizzaCard } from '../PizzaCard/PizzaCard';
+import { Filter } from '../../Filter/Filter';
+import { Footer } from '../../Footer/Footer';
+import { PizzaCard } from '../../PizzaCard/PizzaCard';
 import styles from './Home.module.scss';
-import { Pizza } from '../../assets/types/types';
-import { AppRootState, useAppDispatch } from '../../redux/store';
+import { Pizza } from '../../../assets/types/types';
+import { AppRootState, useAppDispatch } from '../../../redux/store';
 import { useSelector } from 'react-redux';
-import { pizzaSliceThunks } from '../../redux/slices/pizzaSlice';
+import { pizzaSliceThunks } from '../../../redux/slices/pizzaSlice';
 import { FaChevronUp } from 'react-icons/fa6';
 import { IoFilter } from 'react-icons/io5';
-import { PizzaCardSkeleton } from '../PizzaCard/PizzaCardSkeleton/PizzaCardSkeleton';
-import { NoMatchPizzaCard } from '../PizzaCard/NoMatchPizzaCard/NoMatchPizzaCard';
+import { PizzaCardSkeleton } from '../../PizzaCard/PizzaCardSkeleton/PizzaCardSkeleton';
+import { NoMatchPizzaCard } from '../../PizzaCard/NoMatchPizzaCard/NoMatchPizzaCard';
 
 export const Home = () => {
   const dispatch = useAppDispatch();
@@ -90,7 +90,7 @@ export const Home = () => {
       <div className={styles.pizza_grid_box}>
         {pizzaList.length ? pizzaList : emptyCard}
       </div>
-      <Footer pizzas={pizzas} />
+      <Footer />
     </div>
   );
 };

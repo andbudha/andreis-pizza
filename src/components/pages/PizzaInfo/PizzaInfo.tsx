@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import styles from './PizzaInfo.module.scss';
 import { useSelector } from 'react-redux';
-import { AppRootState } from '../../redux/store';
-import { Pizza } from '../../assets/types/types';
+import { AppRootState } from '../../../redux/store';
+import { Pizza } from '../../../assets/types/types';
 type PizzaInfoProps = {};
 export const PizzaInfo = (props: PizzaInfoProps) => {
   const pizzas = useSelector<AppRootState, Pizza[]>(
