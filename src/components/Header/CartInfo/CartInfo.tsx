@@ -7,8 +7,6 @@ import { CartPizza } from '../../../assets/types/types';
 import { useEffect } from 'react';
 
 export const CartInfo = () => {
-  const dispatch = useAppDispatch();
-
   const cartItems = useSelector<AppRootState, CartPizza[]>(
     (state) => state.cart.cartItems
   );
