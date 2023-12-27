@@ -1,13 +1,17 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { CartPizza } from '../../assets/types/types';
-import { getLocalStorageItems } from '../../assets/localSorageItems/localStorageItems';
+import {
+  getLocalStorageItems,
+  itemAmountFromLocalStorage,
+  totalPriceFromLocalStorage,
+} from '../../assets/localSorageItems/localStorageItems';
 
 const slice = createSlice({
   name: 'cart',
   initialState: {
     cartItems: getLocalStorageItems() || ([] as CartPizza[]),
-    totalItemAmount: 0 as number,
-    totalPrice: 0 as number,
+    totalItemAmount: itemAmountFromLocalStorage || (0 as number),
+    totalPrice: totalPriceFromLocalStorage || (0 as number),
   },
   reducers: {
     addPizza: (state, action: PayloadAction<{ addedPizza: CartPizza }>) => {
