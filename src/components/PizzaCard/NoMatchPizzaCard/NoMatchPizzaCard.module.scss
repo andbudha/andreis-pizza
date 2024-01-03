@@ -7,15 +7,16 @@
   box-sizing: border-box;
 }
 .no_match_card_container {
-  width: 100%;
+  width: 290px;
   height: 420px;
+  margin: 5px;
   color: $primary_color;
   @include flexBox(nowrap, column, center, center);
 
   .no_match_box {
     width: 290px;
     height: 420px;
-    margin: 5px;
+
     @include flexBox(nowrap, column, space-between, center);
 
     .no_match_text_box {
