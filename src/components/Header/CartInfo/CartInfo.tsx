@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styles from './CartInfo.module.scss';
 import { BiCart } from 'react-icons/bi';
 import { useSelector } from 'react-redux';
-import { AppRootState, useAppDispatch } from '../../../redux/store';
+import { AppRootState } from '../../../redux/store';
 import { CartPizza } from '../../../assets/types/types';
 import { useEffect } from 'react';
 

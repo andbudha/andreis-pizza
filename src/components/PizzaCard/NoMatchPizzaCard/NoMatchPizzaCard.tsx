@@ -8,7 +8,6 @@ export const NoMatchPizzaCard = () => {
           <h3>Sorry, </h3>
           <h3>no match found on this page</h3>
         </div>
-
         <img src={noMatchImage} alt="pizza slice image" />
       </div>
     </div>

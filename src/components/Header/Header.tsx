@@ -1,10 +1,8 @@
-// @flow
 import { useLocation } from 'react-router-dom';
 import { CartInfo } from './CartInfo/CartInfo';
 import styles from './Header.module.scss';
 import { Logo } from './Logo/Logo';
 import { Search } from './Search/Search';
-import { PageNotFound } from '../pages/404/PageNotFound';
 
 export const Header = () => {
   return (

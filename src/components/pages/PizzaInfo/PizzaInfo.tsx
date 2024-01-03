@@ -3,8 +3,8 @@ import styles from './PizzaInfo.module.scss';
 import { useSelector } from 'react-redux';
 import { AppRootState } from '../../../redux/store';
 import { Pizza } from '../../../assets/types/types';
-type PizzaInfoProps = {};
-export const PizzaInfo = (props: PizzaInfoProps) => {
+
+export const PizzaInfo = () => {
   const pizzas = useSelector<AppRootState, Pizza[]>(
     (state) => state.pizzas.pizzas
   );
