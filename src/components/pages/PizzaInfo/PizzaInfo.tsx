@@ -11,8 +11,6 @@ export const PizzaInfo = (props: PizzaInfoProps) => {
   const params = useParams();
   const { id } = params;
 
-  console.log(id);
-
   const pizza = pizzas.find((pizza) => pizza.id === id);
 
   return (
