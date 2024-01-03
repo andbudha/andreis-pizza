@@ -8,18 +8,18 @@
 }
 
 .pizza_info_container {
-  height: 640px;
+  height: 1100px;
   width: 100%;
   @include flexBox(nowrap, column, center, center);
 
   .pizza_img_box {
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
     @include flexBox(nowrap, column, center, center);
 
     .pizza_img {
-      width: 300px;
-      height: 300px;
+      width: 400px;
+      height: 400px;
     }
   }
 
@@ -35,25 +35,24 @@
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 440px) {
     .pizza_detail_box {
       width: 320px;
       height: 360pxpx;
     }
   }
 }
-
-@media (max-width: 400px) {
+@media (max-width: 640px) {
   .pizza_info_container {
     height: 680px;
     .pizza_img_box {
-      height: 280px;
-      width: 280px;
+      height: 330px;
+      width: 330px;
       @include flexBox(nowrap, column, center, center);
 
       .pizza_img {
-        width: 280px;
-        height: 280px;
+        width: 330px;
+        height: 330px;
       }
     }
   }
