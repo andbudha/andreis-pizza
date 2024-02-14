@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Pizza } from '../assets/types/types';
 
 export const instance = axios.create({
-  baseURL: 'https://656897589927836bd975198a.mockapi.io/reactpizza/api/1/items',
+  baseURL: 'https://9e1375a72a3aaeea.mokky.dev/pizzas',
 });
 
 export const pizzaAPI = {
