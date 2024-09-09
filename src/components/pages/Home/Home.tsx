@@ -10,7 +10,6 @@ import { pizzaSliceThunks } from '../../../redux/slices/pizzaSlice';
 import { FaChevronUp } from 'react-icons/fa6';
 import { IoFilter } from 'react-icons/io5';
 import { PizzaCardSkeleton } from '../../PizzaCard/PizzaCardSkeleton/PizzaCardSkeleton';
-import { NoMatchPizzaCard } from '../../PizzaCard/NoMatchPizzaCard/NoMatchPizzaCard';
 
 export const Home = () => {
   const dispatch = useAppDispatch();
@@ -54,25 +53,23 @@ export const Home = () => {
   const pizzaList = pizzas.map((pizza) => {
     return (
       <div key={pizza.id}>
-        {isLoading ? (
-          <PizzaCardSkeleton />
-        ) : (
-          <PizzaCard
-            category={pizza.category}
-            id={pizza.id}
-            imageUrl={pizza.imageUrl}
-            name={pizza.name}
-            price={pizza.price}
-            rating={pizza.rating}
-            sizes={pizza.sizes}
-            types={pizza.types}
-          />
-        )}
+        <PizzaCard
+          category={pizza.category}
+          id={pizza.id}
+          imageUrl={pizza.imageUrl}
+          name={pizza.name}
+          price={pizza.price}
+          rating={pizza.rating}
+          sizes={pizza.sizes}
+          types={pizza.types}
+        />
       </div>
     );
   });
-  const emptyCard = isLoading ? <PizzaCardSkeleton /> : <NoMatchPizzaCard />;
 
+  const pizzaSkeletons = [...new Array(6)].map((_, i) => (
+    <PizzaCardSkeleton key={i} />
+  ));
   const operateMenuHandler = () => {
     setShowFilterMenu(!showFilterMenu);
   };
@@ -88,7 +85,7 @@ export const Home = () => {
       </div>
       {showFilterMenu && <Filter />}
       <div className={styles.pizza_grid_box}>
-        {pizzaList.length ? pizzaList : emptyCard}
+        {pizzaList.length ? pizzaList : pizzaSkeletons}
       </div>
       <Footer />
     </div>
